@@ -168,6 +168,8 @@ document.addEventListener("DOMContentLoaded", function () {
       function (e) {
         var btn = e.target && e.target.closest && e.target.closest("[download-table-image-button]");
         if (!btn) return;
+        // No table block on this page: leave the click to the page's own code.
+        if (!document.querySelector(TABLE_SELECTOR)) return;
         e.preventDefault();
         e.stopImmediatePropagation();
         // The click no longer reaches Webflow, so close the "..." menu here.

@@ -10,7 +10,9 @@
    It takes a few milliseconds and runs inside the click.
    Same file in eupf/ and lf/. */
 document.addEventListener("DOMContentLoaded", function () {
-  const EXPORT_SELECTOR = ".graph-image-export";
+  // Chart blocks this script knows how to draw. The term deposit calculator
+  // has its own donut block (#lfc-dp-chart) instead of .graph-image-export.
+  const EXPORT_SELECTOR = ".graph-image-export, #lfc-dp-chart";
   const S = 2; // 2x so the image is not blurry
   const PAD = 30 * S;
   const svgCache = new Map();
@@ -25,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ["personal-loan", "personal-loan"],
       ["savings-calculator", "savings"],
       ["early-loan-repayment", "early-loan-repayment"],
+      ["term-deposit", "term-deposit"],
     ];
     const hit = names.find(function (n) { return path.includes(n[0]); });
     return "simulationEU-chart-" + (hit ? hit[1] : "compound-interest") + ".png";
@@ -195,6 +198,9 @@ document.addEventListener("DOMContentLoaded", function () {
     function (e) {
       const btn = e.target && e.target.closest && e.target.closest("[download-graph-image-button]");
       if (!btn) return;
+      // No chart block we can draw on this page: leave the click to the
+      // page's own code instead of swallowing it.
+      if (!document.querySelector(EXPORT_SELECTOR)) return;
       e.preventDefault();
       e.stopImmediatePropagation();
       closeMenu(btn);
