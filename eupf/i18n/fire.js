@@ -150,6 +150,20 @@
         var s = o.scales && o.scales[ax] && o.scales[ax].title;
         if (s && (v = tr(s.text)) !== null) { s.text = v; changed = true; }
       });
+      /* Tooltip title: calculadora-fire.js returns "1 year" / "N years". */
+      var cb = o.plugins && o.plugins.tooltip && o.plugins.tooltip.callbacks;
+      if (cb && typeof cb.title === "function" && !cb.title.__lfI18n) {
+        var origTitle = cb.title;
+        var newTitle = function () {
+          var r = origTitle.apply(this, arguments);
+          var y = (typeof r === "string") ? /^(\d+) years?$/.exec(r.trim()) : null;
+          if (!y) return r;
+          return (L === "pl") ? y[1] + " " + plLata(y[1]) : y[1] + " jaar";
+        };
+        newTitle.__lfI18n = true;
+        cb.title = newTitle;
+        changed = true;
+      }
       if (changed) c.update("none");
     });
   }

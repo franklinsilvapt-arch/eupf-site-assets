@@ -118,14 +118,55 @@
     [/^, which translates to an average annual return of$/, function () { return ", czyli średni roczny zwrot"; }],
     [/^(\S+) (\d{4})$/, function (r) { return (MIESIAC[r[1]] || r[1]) + " " + r[2]; }]
   ];
+  /* Validation messages are hardcoded in English in the PL embed. */
+  var ERRORS_PL = [
+    [/^Enter an investment amount greater than zero\.$/, function () { return "Wpisz kwotę inwestycji większą od zera."; }],
+    [/^The start date is outside the available history \((.+) to (.+)\)\.$/, function (r) { return "Data początkowa wykracza poza dostępną historię (od " + r[1] + " do " + r[2] + ")."; }],
+    [/^The latest date available in the history is (.+)\. Pick an end date on or before that\.$/, function (r) { return "Najpóźniejsza data dostępna w historii to " + r[1] + ". Wybierz datę końcową nie późniejszą niż ta."; }],
+    [/^The end date must be after the start date\.$/, function () { return "Data końcowa musi być późniejsza niż data początkowa."; }]
+  ];
   function apply() {
     if (P) {
+      swap(document.getElementById("lfc-sp-error"), ERRORS_PL);
       swap(document.getElementById("lfc-sp-resumo-texto"), SUMMARY);
       fixCharts({ "Investment value": "Wartość inwestycji" });
     }
     fixNumbers(resultRoots());
   }
 
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+  else start();
+})();
+
+/* ================= All languages: default end date (Oct 2026) ================= */
+/*
+  The calculator selects the latest month of the dataset as the default end date,
+  but the visible dropdown labels keep the text typed in the Designer (EN said
+  "August 2026", PL and NL "December 2024"), so the page showed one date and
+  calculated another. This copies the selected option into each label once the
+  options exist, so the default always follows the data.
+*/
+(function () {
+  var KEYS = ["mes-inicio", "ano-inicio", "mes-fim", "ano-fim"];
+  function sync() {
+    var done = true;
+    KEYS.forEach(function (k) {
+      var sel = document.querySelector('select[data-type="' + k + '"]');
+      var disp = document.querySelector('[data-dd-display="' + k + '"]');
+      if (!sel || !disp) return;
+      var opt = sel.options && sel.selectedIndex >= 0 ? sel.options[sel.selectedIndex] : null;
+      if (!opt) { done = false; return; }
+      var txt = (opt.textContent || "").trim();
+      if (txt && disp.textContent.trim() !== txt) disp.textContent = txt;
+    });
+    return done;
+  }
+  var tries = 0;
+  function loop() {
+    var ok = sync();
+    if (!ok && ++tries < 50) setTimeout(loop, 100);
+  }
+  function start() { loop(); setTimeout(sync, 1500); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
   else start();
 })();

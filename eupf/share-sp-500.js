@@ -65,19 +65,30 @@ document.addEventListener("DOMContentLoaded", function () {
       const copiedIcon = document.querySelector("[copied-icon]");
       const shareIcon = document.querySelector("[share-icon]");
 
-      if (copiedText) copiedText.textContent = "Copied!";
+      // Page language: /nl and /pl get their own label; the original button text
+      // (already translated by the locale) is restored afterwards.
+      const lang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase();
+      const copiedLabel = { nl: "Gekopieerd!", pl: "Skopiowano!" }[lang] || "Copied!";
+      const originalLabel = copiedText ? copiedText.getAttribute("data-original") : "";
+
+      if (copiedText) copiedText.textContent = copiedLabel;
       if (copiedIcon) copiedIcon.style.display = "block";
       if (shareIcon) shareIcon.style.display = "none";
 
       setTimeout(() => {
-        if (copiedText) copiedText.textContent = "Share results";
+        if (copiedText) copiedText.textContent = originalLabel || "Share results";
         if (copiedIcon) copiedIcon.style.display = "none";
         if (shareIcon) shareIcon.style.display = "block";
-      }, 2000);
+      }, 1600); // just after copy-results-button-click.js resets its own English label at 1500 ms
     });
   }
 
   setTimeout(() => {
+    // Remember the localized button label before any click changes it.
+    const labelEl = document.querySelector("[copied-text]");
+    if (labelEl && !labelEl.hasAttribute("data-original")) {
+      labelEl.setAttribute("data-original", labelEl.textContent);
+    }
     const shareUrlButton = document.querySelector("[share-url]");
     if (shareUrlButton) {
       shareUrlButton.addEventListener("click", (e) => {

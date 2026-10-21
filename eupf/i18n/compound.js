@@ -27,7 +27,7 @@
   var ZL = "zł";
 
   var TERM_MAP = {
-    "Year": "Rok", "Years": "Lata", "Month": "Miesiąc",
+    "Year": "Rok", "Years": "Lata", "Month": "Miesiąc", "Period": "Rok",
     "Invested capital": "Wpłacony kapitał", "Invested": "Wpłaty",
     "Investments": "Wpłaty", "Total investments": "Łączne wpłaty",
     "Contributions": "Wpłaty", "Interest": "Odsetki",
@@ -110,12 +110,17 @@
   if (window.Chart && !window.__plChartWrapped) {
     var _Chart = window.Chart;
     function mapTerm(s) { return (typeof s === "string" && TERM_MAP[s]) ? TERM_MAP[s] : s; }
+    /* Tooltip title comes as "1 year" / "N years" from calculadora-juros.js. */
+    function yearsPl(r) {
+      var m = /^\s*(\d+)\s+years?\s*$/i.exec(r);
+      return m ? m[1] + " " + plLata(m[1]) : r;
+    }
     function wrapCb(obj, key) {
       if (obj && typeof obj[key] === "function") {
         var orig = obj[key];
         obj[key] = function () {
           var r = orig.apply(this, arguments);
-          return (typeof r === "string") ? eurToZl(r) : r;
+          return (typeof r === "string") ? yearsPl(eurToZl(r)) : r;
         };
       }
     }
@@ -151,7 +156,20 @@
     window.__plChartWrapped = true;
   }
 
+  /* The compounding option "Roczny" lives in the select choices, which the Webflow
+     localization API cannot edit. Fixed here, on the option and on the custom
+     dropdown links Finsweet builds from it. Runs once right away too, before the
+     deferred Finsweet script reads the options. */
+  function fixFrequencyLabels() {
+    var els = document.querySelectorAll("select option, a.dropdown-calculadora, .dropdown-toggle > div");
+    for (var i = 0; i < els.length; i++) {
+      if ((els[i].textContent || "").trim() === "Roczny") els[i].textContent = "Rocznie";
+    }
+  }
+  fixFrequencyLabels();
+
   function run() {
+    fixFrequencyLabels();
     translateSummary();
     convertTextNodes(document.body);
     translateTable();
