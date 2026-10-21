@@ -274,8 +274,23 @@
     });
   }
 
+  /* The English rich-text glossary (.glossary-rich-text) also renders on /nl/ and /pl/,
+     next to the localized glossary: hide it there. EN is not affected. */
+  function hideEnglishGlossary() {
+    document.querySelectorAll(".glossary-rich-text").forEach(function (rt) {
+      var wrap = rt.closest(".glossario-content_wrapper");
+      var target = (wrap && !wrap.querySelector(".glossario-content_wrapper")) ? wrap : rt;
+      if (target.style.display !== "none") target.style.display = "none";
+    });
+  }
   function apply() {
+    hideEnglishGlossary();
     if (L !== "nl") return;
+    swap(document.body, [
+      [/^(.*)een hogere rente betekent dat je meer betaalt aan interest\.(.*)$/, function (r) {
+        return r[1] + "een hogere rente betekent dat je meer rente betaalt." + r[2];
+      }]
+    ]);
     fixNumbers(resultRoots());
   }
 

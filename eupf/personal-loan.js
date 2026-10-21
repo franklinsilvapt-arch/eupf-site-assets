@@ -32,8 +32,15 @@
     return Math.round((num + Number.EPSILON) * 100) / 100;
   }
 
-  // ✅ CHANGED: now outputs 10,888.24€ (comma thousands, dot decimal, € at end)
+  // EN/PL: 10,888.24€ (PL is converted to zł later by eupf/i18n/personal-loan.js).
+  // NL: € 10.888,24 (Dutch format), also used in the chart tooltip and y-axis.
   function formatEuro(value) {
+    value = Number(value) || 0;
+    if (NL) {
+      var nlParts = Math.abs(value).toFixed(2).split(".");
+      nlParts[0] = nlParts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      return (value < 0 ? "- " : "") + "€ " + nlParts.join(",");
+    }
     var parts = value.toFixed(2).split(".");
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return parts.join(".") + "€";
@@ -123,6 +130,7 @@
 
       // ✅ CHANGED: percentage now uses dot as decimal separator (e.g. 5.25%)
       var taegDisplay = toNumber($('[data-type="taeg"]').val()).toFixed(2) + "%";
+      if (NL) taegDisplay = taegDisplay.replace(".", ",");
 
       // DISCLAIMER
       document.querySelector("[data-disclaimer]").innerHTML =

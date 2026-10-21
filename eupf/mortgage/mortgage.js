@@ -68,9 +68,9 @@ $(document).ready(function () {
       $('[data-type="period-emprestimo"]').val() * 12
     );
     const n_prazoAnos = $('[data-type="period-emprestimo"]').val();
-    const TAN_taxaAnualNominal = roundTo2(
-      toNumber($('[data-type="yield"]').val()) / 100
-    );
+    // Keep the exact rate as a fraction (roundTo2 here rounded 3.5% to 4%)
+    const TAN_taxaAnualNominal =
+      toNumber($('[data-type="yield"]').val()) / 100;
     const C0_comissoesIniciais = toInt(
       $('[data-type="comissoes-iniciais"]').val().replace(/\./g, "")
     );
@@ -288,7 +288,7 @@ $(document).ready(function () {
       formatEuro(L_montanteEmprestimo) +
       "</b>, over <b>" +
       n_prazoAnos +
-      " years</b>, at an <b>interest rate of " +
+      " years</b>, at an <b>APR of " +
       TAEGValue +
       "</b>, including insurance, fees, and taxes, you will have an average <b>monthly payment of " +
       formatEuro(PagamentoMensal) +

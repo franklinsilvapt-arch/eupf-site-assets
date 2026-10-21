@@ -171,14 +171,14 @@
     if (!el) return;
     var t = el.textContent || "";
     if (!/If you take out a loan of/i.test(t)) return;
-    var m = t.match(/If you take out a loan of\s*(.+?),\s*over\s*(\d+)\s*years,\s*at an interest rate of\s*([\d.,]+\s*%?),\s*including insurance, fees, and taxes,\s*you will have an average monthly payment of\s*(.+?)\.\s*In total, you will pay\s*(.+?),\s*of which\s*(.+?)\s*corresponds to interest and other costs/i);
+    var m = t.match(/If you take out a loan of\s*(.+?),\s*over\s*(\d+)\s*years,\s*at an (?:interest rate|APR) of\s*([\d.,]+\s*%?),\s*including insurance, fees, and taxes,\s*you will have an average monthly payment of\s*(.+?)\.\s*In total, you will pay\s*(.+?),\s*of which\s*(.+?)\s*corresponds to interest and other costs/i);
     if (!m) return;
     var loan = money(m[1]), yrs = parseInt(m[2], 10), rate = m[3].replace(/\s+/g, ""),
         pmt = money(m[4]), total = money(m[5]), inter = money(m[6]);
     if (rate.indexOf("%") === -1) rate += "%";
     el.innerHTML =
       "Jeśli zaciągniesz kredyt w wysokości <b>" + loan + "</b> na <b>" + yrs + " " + plLata(yrs) + "</b>, " +
-      "przy oprocentowaniu <b>" + rate + "</b>, wraz z ubezpieczeniami, opłatami i podatkami, " +
+      "przy RRSO <b>" + rate + "</b>, wraz z ubezpieczeniami, opłatami i podatkami, " +
       "Twoja średnia rata miesięczna wyniesie <b>" + pmt + "</b>. " +
       "Łącznie zapłacisz <b>" + total + "</b>, z czego <b>" + inter + "</b> stanowią odsetki i inne koszty. " +
       "RRSO to wskaźnik odzwierciedlający całkowity koszt kredytu, uwzględniający wszystkie powiązane opłaty.";
@@ -376,10 +376,10 @@
     var el = document.querySelector("[data-disclaimer]");
     if (!el) return;
     var t = (el.textContent || "").replace(/\s+/g, " ");
-    var r = t.match(/If you take out a loan of (.+?), over (\d+) years, at an interest rate of ([\d.,]+ ?%?), .*?monthly payment of (.+?)\. (?:In total, you will pay|In totaal betaal je) (.+?), of which (.+?) corresponds to interest/);
+    var r = t.match(/If you take out a loan of (.+?), over (\d+) years, at an (?:interest rate|APR) of ([\d.,]+ ?%?), .*?monthly payment of (.+?)\. (?:In total, you will pay|In totaal betaal je) (.+?), of which (.+?) corresponds to interest/);
     if (!r) return;
     el.innerHTML =
-      "Als je een <b>lening van " + r[1] + "</b> afsluit over <b>" + r[2] + " jaar</b>, tegen een <b>rente van " + r[3] +
+      "Als je een <b>lening van " + r[1] + "</b> afsluit over <b>" + r[2] + " jaar</b>, tegen een <b>JKP van " + r[3] +
       "</b>, inclusief verzekeringen, kosten en belastingen, betaal je gemiddeld <b>" + r[4] + " per maand</b>. " +
       "In totaal betaal je <b>" + r[5] + "</b>, waarvan <b>" + r[6] + " aan rente en overige kosten</b>. " +
       "Het <b>JKP</b> is de indicator die de totale kosten van het krediet weergeeft, inclusief alle bijbehorende kosten.";
@@ -394,7 +394,7 @@
     } : {
       "Principal repayment": "Aflossing",
       "Interest": "Rente",
-      "Loan monthly payments": "Maandelijkse aflossingen",
+      "Loan monthly payments": "Maandlasten van de lening",
       "Payment number": "Termijn nr."
     });
   }
