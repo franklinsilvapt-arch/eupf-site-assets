@@ -117,6 +117,49 @@
 });
 */
 
+/*
+  Polish pages (/pl/): amounts in the inputs use a space as thousands
+  separator ("10 000", U+00A0, same as the PL results) instead of a dot.
+  The page code of some calculators cannot read that space, so right before
+  it runs (capture phase of the "Calcular" click or of the objective radio
+  change) the spaces are taken out, and the visible values come back
+  straight after. English and Dutch pages are not touched.
+*/
+var EUPF_INPUTS_PL = /^\/pl(\/|$)/.test(location.pathname);
+var EUPF_INPUTS_THOU = EUPF_INPUTS_PL ? "\u00a0" : ".";
+
+(function () {
+  if (!EUPF_INPUTS_PL) return;
+  function strip() {
+    var saved = [];
+    var inputs = document.querySelectorAll("input[data-format]");
+    Array.prototype.forEach.call(inputs, function (el) {
+      if (el.type === "radio" || el.type === "checkbox") return;
+      var v = String(el.value);
+      if (/\s/.test(v)) {
+        saved.push([el, v, v.replace(/\s/g, "")]);
+        el.value = v.replace(/\s/g, "");
+      }
+    });
+    if (saved.length) {
+      setTimeout(function () {
+        saved.forEach(function (s) {
+          /* only if the page code did not change the value itself */
+          if (s[0].value === s[2]) s[0].value = s[1];
+        });
+      }, 0);
+    }
+  }
+  document.addEventListener("click", function (e) {
+    var t = e.target;
+    if (t && t.closest && t.closest("#calcular")) strip();
+  }, true);
+  document.addEventListener("change", function (e) {
+    var t = e.target;
+    if (t && t.matches && t.matches('input[type="radio"][data-type="objetivo"]')) strip();
+  }, true);
+})();
+
 $(document).ready(function () {
   function formatDecimalNumberWithDot(input, maxValue) {
     let rawValue = input.replace(/[^0-9.,]/g, "");
@@ -139,7 +182,7 @@ $(document).ready(function () {
       decimalPart = "";
     }
 
-    const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, EUPF_INPUTS_THOU);
 
     return decimalPart
       ? `${formattedInteger},${decimalPart}`
@@ -202,7 +245,7 @@ $(document).ready(function () {
     if (maxValue !== null && parseInt(rawValue, 10) > maxValue) {
       rawValue = maxValue.toString();
     }
-    return rawValue.replace(/\B(?=(\d{3})+(?!\d))/g, "."); // Add thousands separator
+    return rawValue.replace(/\B(?=(\d{3})+(?!\d))/g, EUPF_INPUTS_THOU); // Add thousands separator (PL: space)
   }
 
   // General function to handle input events for all formats
@@ -244,6 +287,24 @@ $(document).ready(function () {
       if (!/[0-9]/.test(String.fromCharCode(e.which))) e.preventDefault();
     }
   );
+
+  /* PL: show the default amounts as "10 000" (the page has "10.000" or "10,000") */
+  if (EUPF_INPUTS_PL) {
+    $("[data-format='currency']").each(function () {
+      var maxValue = $(this).attr("max-value") ? parseInt($(this).attr("max-value"), 10) : null;
+      var v = this.value;
+      if (/\d/.test(v)) {
+        var f = formatCurrencyInput(v, maxValue);
+        if (this.getAttribute("value") === v) this.setAttribute("value", f);
+        this.value = f;
+      }
+      var ph = this.getAttribute("placeholder");
+      if (ph && /\d/.test(ph)) this.setAttribute("placeholder", formatCurrencyInput(ph, maxValue));
+    });
+    $("[data-format='decimal-number-with-dot']").each(function () {
+      if (/\d/.test(this.value)) this.value = formatDecimalNumberWithDot(this.value, null);
+    });
+  }
 
   // Handle focus and blur for placeholders
   $("[data-format]").on("focus", function () {

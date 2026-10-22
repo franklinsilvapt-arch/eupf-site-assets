@@ -43,7 +43,11 @@
     s = s.replace(/€/g, ZL);
     s = s.replace(/(\d)\s*zł/g, "$1 " + ZL);
     s = s.replace(/ {2,}(zł)/g, " $1");
-    return s;
+    return plThousands(s);
+  }
+  /* Polish thousands separator: "45.923,81 zł" -> "45 923,81 zł" (U+00A0, as on the PL mortgage page) */
+  function plThousands(s) {
+    return s ? s.replace(/\d{1,3}(?:\.\d{3})+(?=(?:,\d{1,2})?(?:\s*zł|$))/g, function (x) { return x.replace(/\./g, "\u00a0"); }) : s;
   }
   function wordEuro(s) { return s ? s.replace(/\beuro\b/gi, "złotych") : s; }
 
@@ -81,7 +85,7 @@
     /* tylko jeśli to faktyczne zdanie (krótkie), nigdy duży kontener */
     return (best && bestLen < 700) ? best : null;
   }
-  function num(x) { return (x || "").replace(/€/g, "").trim(); }
+  function num(x) { return plThousands((x || "").replace(/€/g, "").trim()); }
   function translateSummary() {
     var el = findSummaryEl();
     if (!el) return;

@@ -125,13 +125,45 @@
     [/^The latest date available in the history is (.+)\. Pick an end date on or before that\.$/, function (r) { return "Najpóźniejsza data dostępna w historii to " + r[1] + ". Wybierz datę końcową nie późniejszą niż ta."; }],
     [/^The end date must be after the start date\.$/, function () { return "Data końcowa musi być późniejsza niż data początkowa."; }]
   ];
+  /* PL: the dollar sign goes after the amount, "$68 258,69" -> "68 258,69 $" (amounts stay in USD, the index is in USD) */
+  function dollarAfter(roots) {
+    roots.forEach(function (root) {
+      eachText(root, function (n) {
+        var v = n.nodeValue;
+        if (v.indexOf("$") === -1) return;
+        if (n.parentNode && n.parentNode.closest && n.parentNode.closest("a, [class*='banner'], [class*='pub_']")) return;
+        var nv = v.replace(/(-?)\$\s?(\d{1,3}(?:[\u00a0 ]\d{3})*(?:,\d{1,2})?)(?![\d.,])/g, function (_, sign, num) {
+          return sign + num.replace(/ /g, "\u00a0") + " $";
+        });
+        if (nv !== v) n.nodeValue = nv;
+      });
+    });
+  }
+  /* PL grammar: "we" instead of "w" before w/f + consonant ("we wrześniu"); other months keep "w" */
+  function weBeforeConsonant(root) {
+    if (!root) return;
+    var nodes = [];
+    eachText(root, function (n) { if (n.nodeValue.trim()) nodes.push(n); });
+    var next = /^[wWfF][^aąeęioóuyAĄEĘIOÓUY\s]/;
+    nodes.forEach(function (n, i) {
+      var v = n.nodeValue;
+      /* inside one text node */
+      var nv = v.replace(/(^|\s)w(\s+)(?=[wWfF][^aąeęioóuyAĄEĘIOÓUY\s])/g, "$1we$2");
+      /* "w" at the end of this node, month at the start of the next one */
+      var nx = nodes[i + 1];
+      if (nx && next.test(nx.nodeValue.replace(/^\s+/, ""))) nv = nv.replace(/(^|\s)w(\s*)$/, "$1we$2");
+      if (nv !== v) n.nodeValue = nv;
+    });
+  }
   function apply() {
     if (P) {
       swap(document.getElementById("lfc-sp-error"), ERRORS_PL);
       swap(document.getElementById("lfc-sp-resumo-texto"), SUMMARY);
+      weBeforeConsonant(document.getElementById("lfc-sp-resumo-texto"));
       fixCharts({ "Investment value": "Wartość inwestycji" });
     }
     fixNumbers(resultRoots());
+    if (P) dollarAfter(resultRoots());
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);

@@ -10,9 +10,10 @@
 /*
   PL — Kalkulator S&P 500 (ETF): lokalizacja runtime
   ------------------------------------------------------------
-  Logika jest w zewnętrznym calculadora-sp500.js. Waluta = USD ($)
-  (S&P 500 jest w dolarach — NIE zamieniamy na zł). Ten skrypt
+  Logika jest w zewnętrznym calculadora-sp500.js. Ten skrypt
   tłumaczy interfejs i dynamiczne podsumowanie na polski, tylko /pl/.
+  Kwoty: kalkulator to ogólny symulator kwoty, a polski użytkownik
+  inwestuje w złotych, więc "$45.315,68" -> "45 315,68 zł" (Oct 2026).
 
   GDZIE: Page settings > Custom code > "Before </body> tag", NA KOŃCU.
 
@@ -89,6 +90,41 @@
     return "lat";
   }
 
+  /* ── Kwoty: "$45.315,68" -> "45 315,68 zł" (spacja U+00A0 jak w kredycie hipotecznym) ── */
+  function usdToZl(t) {
+    if (!t || t.indexOf("$") === -1) return t;
+    return t.replace(/(-?)\$\s?(\d{1,3}(?:[.\u00a0 ]\d{3})*(?:,\d{1,2})?)(?![\d.,])/g, function (_, sign, n) {
+      return sign + n.replace(/[. ]/g, "\u00a0") + " zł";
+    });
+  }
+  function convertMoney() {
+    var roots = document.querySelectorAll("[capital-final-value], [total-depositos-value], [total-juros-acumulados-value], [resume-text], .table-content");
+    Array.prototype.forEach.call(roots, function (root) {
+      var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false), n;
+      while ((n = w.nextNode())) {
+        var v = n.nodeValue, nv = usdToZl(v);
+        if (nv !== v) n.nodeValue = nv;
+      }
+    });
+  }
+  /* Jednostka przy polach kwoty: "$" -> "zł" */
+  function inputUnits() {
+    var els = document.querySelectorAll(".input-text-position div");
+    for (var i = 0; i < els.length; i++) {
+      var e = els[i];
+      if (e.children.length === 0 && (e.textContent || "").trim() === "$") e.textContent = "zł";
+    }
+  }
+  /* Oczekiwany zwrot z przecinkiem: "9.82" -> "9,82" (wartości gotowych opcji mają kropkę) */
+  function yieldComma() {
+    var y = document.querySelector('[data-type="yield"]');
+    if (y && /^\d+\.\d+$/.test(y.value)) y.value = y.value.replace(".", ",");
+  }
+  yieldComma();
+  document.addEventListener("change", function (e) {
+    if (e.target && e.target.name === "radio-sp") { yieldComma(); setTimeout(yieldComma, 0); }
+  });
+
   /* ── Podsumowanie "If you start with…" -> PL (zostaje $) ── */
   function findSummaryEl() {
     var c = document.querySelectorAll("p, span, div");
@@ -129,6 +165,14 @@
         });
         if (o && o.plugins && o.plugins.title && typeof o.plugins.title.text === "string")
           o.plugins.title.text = mapTerm(o.plugins.title.text);
+        var cb = o && o.plugins && o.plugins.tooltip && o.plugins.tooltip.callbacks;
+        if (cb && typeof cb.label === "function") {
+          var origLabel = cb.label;
+          cb.label = function () {
+            var r = origLabel.apply(this, arguments);
+            return (typeof r === "string") ? usdToZl(r) : r;
+          };
+        }
       } catch (e) {}
       return cfg;
     }
@@ -146,7 +190,7 @@
   function run() {
     if (running) return;
     running = true;
-    try { translateSummary(); applyStatic(document.body); } finally { running = false; }
+    try { translateSummary(); applyStatic(document.body); convertMoney(); inputUnits(); } finally { running = false; }
   }
   function start() {
     run();
