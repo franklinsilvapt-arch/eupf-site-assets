@@ -1,5 +1,5 @@
 /* Euro inflation calculator (eupersonalfinance.eu/euro-inflation-calculator, /pl, /nl).
-   EMBED D v5 - main script. EN and PL: Eurostat HICP 1997+. NL: CBS CPI 1963+.
+   EMBED D v6 - main script. EN: Eurostat HICP 1997+. NL: CBS CPI 1963+. PL: GUS CPI 1995+ (PLN).
    Loaded from a page embed, synchronously, at the same position the inline code used to sit. */
 (function () {
   'use strict';
@@ -10,30 +10,30 @@
      anyway, so every string is swapped here instead.
      The glossary is the exception: it has its own Dutch version on the locale, which
      is why no gl_* keys live here. One source of truth per block. */
-  /* Polish lives at /pl and uses the euro area series, like English. */
+  /* Polish lives at /pl and uses the national CPI from GUS, in zloty, like Dutch uses CBS. */
   var LANG = (/^\/nl(\/|$)/).test(window.location.pathname) ? 'nl'
     : (/^\/pl(\/|$)/).test(window.location.pathname) ? 'pl' : 'en';
 
   var DICT = {
     pl: {
       lbl_amount: 'Kwota',
-      tip_amount: 'Kwota, kt\u00f3rej si\u0142\u0119 nabywcz\u0105 chcesz sprawdzi\u0107, mierzona oficjaln\u0105 inflacj\u0105 w strefie euro (HICP, Eurostat). Na przyk\u0142ad pensja, oszcz\u0119dno\u015bci albo dawna cena.',
+      tip_amount: 'Kwota, kt\u00f3rej si\u0142\u0119 nabywcz\u0105 chcesz sprawdzi\u0107, mierzona oficjaln\u0105 inflacj\u0105 w Polsce (wska\u017anik cen towar\u00f3w i us\u0142ug konsumpcyjnych GUS). Na przyk\u0142ad pensja, oszcz\u0119dno\u015bci albo dawna cena.',
       lbl_start: 'Rok pocz\u0105tkowy',
-      tip_start: 'Pierwszy rok okresu. Oficjalne dane HICP dla strefy euro zaczynaj\u0105 si\u0119 w 1997 roku, bo od tego roku istnieje zharmonizowany wska\u017anik.',
+      tip_start: 'Pierwszy rok okresu. Seria zaczyna si\u0119 w 1995 roku, gdy po denominacji wesz\u0142y do obiegu nowe z\u0142ote (10 000 starych z\u0142otych = 1 nowy z\u0142oty).',
       lbl_end: 'Rok ko\u0144cowy',
-      tip_end: 'Ostatni rok okresu. Dla bie\u017c\u0105cego roku kalkulator u\u017cywa warto\u015bci wst\u0119pnej, opartej na miesi\u0105cach opublikowanych dot\u0105d przez Eurostat.',
+      tip_end: 'Ostatni rok okresu. Dla bie\u017c\u0105cego roku kalkulator u\u017cywa warto\u015bci wst\u0119pnej: \u015bredniej z miesi\u0119cy opublikowanych dot\u0105d przez GUS.',
       btn_calc: 'Oblicz',
       cur_label: 'Kwota w',
       row_cumulative: 'Inflacja skumulowana',
       row_avg: '\u015arednia roczna stopa',
       row_loss: 'Utrata si\u0142y nabywczej',
-      disclaimer: 'Wyniki s\u0105 orientacyjnymi symulacjami opartymi na zharmonizowanym wska\u017aniku cen konsumpcyjnych (HICP) publikowanym przez Eurostat i nie stanowi\u0105 porady finansowej.',
+      disclaimer: 'Wyniki s\u0105 orientacyjnymi symulacjami opartymi na wska\u017aniku cen towar\u00f3w i us\u0142ug konsumpcyjnych (CPI) publikowanym przez GUS i nie stanowi\u0105 porady finansowej.',
       lbl_equiv: 'Si\u0142a nabywcza {v} z {y0} r. w {y1} r.:',
       lbl_needed: 'Kwota potrzebna w {y1} r. dla tej samej si\u0142y nabywczej',
-      region_ea: 'strefy euro',
-      region_nl: 'strefy euro',
-      summary: 'Wed\u0142ug oficjalnej inflacji w strefie euro <strong>{v} z {y0} r.</strong> ma w <strong>{y1} r.</strong> si\u0142\u0119 nabywcz\u0105 zaledwie <strong>{pc}</strong>. Pieni\u0105dze, kt\u00f3re le\u017ca\u0142y bez oprocentowania, straci\u0142y <strong>{loss}</strong> si\u0142y nabywczej w ci\u0105gu {n}, przy skumulowanej inflacji <strong>{cum}</strong>, czyli \u015brednio {avg} rocznie. Aby w {y1} r. kupi\u0107 to, co w {y0} r. kosztowa\u0142o {v}, potrzebujesz <strong>{need}</strong>.',
-      sum_prov: ' Bie\u017c\u0105cy rok jest wst\u0119pny, oparty na miesi\u0105cach opublikowanych dot\u0105d przez Eurostat.',
+      region_ea: 'Polski',
+      region_nl: 'Polski',
+      summary: 'Wed\u0142ug oficjalnej inflacji w Polsce <strong>{v} z {y0} r.</strong> ma w <strong>{y1} r.</strong> si\u0142\u0119 nabywcz\u0105 zaledwie <strong>{pc}</strong>. Pieni\u0105dze, kt\u00f3re le\u017ca\u0142y bez oprocentowania, straci\u0142y <strong>{loss}</strong> si\u0142y nabywczej w ci\u0105gu {n}, przy skumulowanej inflacji <strong>{cum}</strong>, czyli \u015brednio {avg} rocznie. Aby w {y1} r. kupi\u0107 to, co w {y0} r. kosztowa\u0142o {v}, potrzebujesz <strong>{need}</strong>.',
+      sum_prov: ' Bie\u017c\u0105cy rok jest wst\u0119pny: to \u015brednia z miesi\u0119cy opublikowanych dot\u0105d przez GUS.',
       err_amount: 'Wpisz kwot\u0119 wi\u0119ksz\u0105 od 0, na przyk\u0142ad 1000.',
       err_start: 'Rok pocz\u0105tkowy musi mie\u015bci\u0107 si\u0119 mi\u0119dzy {min} a {max}. Zmie\u0144 go i oblicz ponownie.',
       err_end: 'Rok ko\u0144cowy musi mie\u015bci\u0107 si\u0119 mi\u0119dzy {min} a {max}.',
@@ -51,18 +51,18 @@
       chart_sub_a: 'Jak warto\u015b\u0107',
       chart_sub_b: 'maleje od',
       chart_sub_c: 'do',
-      chart_alt: 'Wykres si\u0142y nabywczej na banknocie 10 euro',
+      chart_alt: 'Wykres si\u0142y nabywczej na tle banknotu 10 z\u0142',
       th_year: 'Rok',
-      th_infl: 'Inflacja (HICP)',
+      th_infl: 'Inflacja (CPI)',
       th_needed: 'Potrzebna kwota',
       th_power: 'Si\u0142a nabywcza',
       th_cum: 'Skumulowana',
       base_year: 'Rok bazowy',
-      prov_note: '* Warto\u015b\u0107 wst\u0119pna dla bie\u017c\u0105cego roku, oparta na miesi\u0105cach opublikowanych dot\u0105d przez Eurostat.',
+      prov_note: '* Warto\u015b\u0107 wst\u0119pna dla bie\u017c\u0105cego roku: \u015brednia z miesi\u0119cy opublikowanych dot\u0105d przez GUS.',
       btn_more: 'Poka\u017c wi\u0119cej',
       btn_less: 'Poka\u017c mniej',
-      src_line: 'Zharmonizowany wska\u017anik cen konsumpcyjnych (HICP) - <a href="https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_ainr/default/table?lang=en" target="_blank" rel="noopener" class="blue-link">baza danych Eurostatu</a>',
-      table_disc: 'Dane oparte na \u015bredniorocznej stopie zmian HICP (Eurostat). Wyniki s\u0105 orientacyjnymi symulacjami i nie stanowi\u0105 porady finansowej.'
+      src_line: 'Wska\u017aniki cen towar\u00f3w i us\u0142ug konsumpcyjnych (CPI) - <a href="https://stat.gov.pl/obszary-tematyczne/ceny-handel/wskazniki-cen/wskazniki-cen-towarow-i-uslug-konsumpcyjnych-pot-inflacja-/roczne-wskazniki-cen-towarow-i-uslug-konsumpcyjnych/" target="_blank" rel="noopener" class="blue-link">G\u0142\u00f3wny Urz\u0105d Statystyczny</a>',
+      table_disc: 'Dane oparte na rocznych wska\u017anikach cen towar\u00f3w i us\u0142ug konsumpcyjnych (GUS). Wyniki s\u0105 orientacyjnymi symulacjami i nie stanowi\u0105 porady finansowej.'
     },
     nl: {
       lbl_amount: 'Bedrag',
@@ -306,13 +306,25 @@
       '2012': 2.5, '2013': 2.5, '2014': 1.0, '2015': 0.6, '2016': 0.3, '2017': 1.4, '2018': 1.7,
       '2019': 2.6, '2020': 1.3, '2021': 2.7, '2022': 10.0, '2023': 3.8, '2024': 3.3, '2025': 3.3,
       '2026': 2.8
+    },
+    /* PL: GUS annual CPI (previous year = 100, minus 100), from 1995, the year the new
+       zloty replaced the old one (10,000 old = 1 new), so every amount is in today's PLN.
+       Source: GUS, "Roczne wskazniki cen towarow i uslug konsumpcyjnych od 1950 roku".
+       2026 is provisional: average of the year-on-year readings GUS has published for
+       January to September 2026. Not in the eupf-hicp-data feed: update by hand in January. */
+    PL: {
+      '1995': 27.8, '1996': 19.9, '1997': 14.9, '1998': 11.8, '1999': 7.3, '2000': 10.1,
+      '2001': 5.5, '2002': 1.9, '2003': 0.8, '2004': 3.5, '2005': 2.1, '2006': 1.0, '2007': 2.5,
+      '2008': 4.2, '2009': 3.5, '2010': 2.6, '2011': 4.3, '2012': 3.7, '2013': 0.9, '2014': 0.0,
+      '2015': -0.9, '2016': -0.6, '2017': 2.0, '2018': 1.6, '2019': 2.3, '2020': 3.4, '2021': 5.1,
+      '2022': 14.4, '2023': 11.4, '2024': 3.6, '2025': 3.6, '2026': 2.9
     }
   };
-  var SERIE_ID = (LANG === 'nl') ? 'NL' : 'EA';
+  var SERIE_ID = (LANG === 'nl') ? 'NL' : (LANG === 'pl') ? 'PL' : 'EA';
   var HICP = SERIES[SERIE_ID];
   var PROVISORIO = { '2026': true };
   var REGIAO = (SERIE_ID === 'NL') ? T('region_nl', 'Dutch') : T('region_ea', 'euro area');
-  var ANO_BASE = (SERIE_ID === 'NL') ? 1963 : 1997;
+  var ANO_BASE = (SERIE_ID === 'NL') ? 1963 : (SERIE_ID === 'PL') ? 1995 : 1997;
 
   /* Guilder: irrevocable conversion rate, and the year cash changed hands. 2002 rather
      than 1999 on purpose, because people remember banknotes, not accounting rates. */
@@ -454,7 +466,7 @@
       btns[i].classList.toggle('is-active', btns[i].getAttribute('data-moeda') === nova);
     }
     var simbolo = document.getElementById('lfc-inf-simbolo');
-    if (simbolo) simbolo.textContent = (nova === 'NLG') ? '\u0192' : '\u20ac';
+    if (simbolo) simbolo.textContent = (LANG === 'pl') ? 'z\u0142' : (nova === 'NLG') ? '\u0192' : '\u20ac';
   }
 
   document.addEventListener('click', function (e) {
@@ -544,18 +556,18 @@
   /* ============ Number formatting ============ */
   /* English: \u20ac1,234.56. Dutch: \u20ac 1.234,56. Getting this wrong is not cosmetic: a
      Dutch reader would read \u20ac1,234.56 as one euro and change. */
-  /* Polish: 1\u00a0234,56\u00a0\u20ac, symbol after the number. */
+  /* Polish: 1\u00a0234,56\u00a0z\u0142, zloty after the number. */
   var NUM = (LANG === 'nl')
     ? { mil: '.', dec: ',', pre: '\u20ac\u00a0', suf: '' }
     : (LANG === 'pl')
-      ? { mil: '\u00a0', dec: ',', pre: '', suf: '\u00a0\u20ac' }
+      ? { mil: '\u00a0', dec: ',', pre: '', suf: '\u00a0z\u0142' }
       : { mil: ',', dec: '.', pre: '\u20ac', suf: '' };
   window.__lfcInfNum = NUM;
 
   function grp(s) { return s.replace(/\B(?=(\d{3})+(?!\d))/g, NUM.mil); }
 
   function parseNumber(raw) {
-    var s = String(raw).replace(/[\s\u00a0\u20ac\u0192]/g, '');
+    var s = String(raw).replace(/z\u0142/gi, '').replace(/[\s\u00a0\u20ac\u0192]/g, '');
     if (/^-?\d{1,3}(\.\d{3})+(,\d+)?$/.test(s)) s = s.replace(/\./g, '').replace(',', '.');
     else if (/^-?\d{1,3}(,\d{3})+(\.\d+)?$/.test(s)) s = s.replace(/,/g, '');
     else if (LANG === 'nl' || LANG === 'pl') s = s.replace(/\./g, '').replace(',', '.');
@@ -591,6 +603,8 @@
   if (LANG === 'nl' || LANG === 'pl') {
     var campoValor = document.getElementById('lfc-inf-valor');
     if (campoValor && campoValor.value === '1,000') campoValor.value = (LANG === 'nl') ? '1.000' : '1000';
+    var simboloPl = document.getElementById('lfc-inf-simbolo');
+    if (LANG === 'pl' && simboloPl) simboloPl.textContent = 'z\u0142';
   }
 
   /* Polish plural for years: 1 rok, 2-4 lata (but 12-14 lat), otherwise lat. */

@@ -1,5 +1,5 @@
 /* Euro inflation calculator (eupersonalfinance.eu/euro-inflation-calculator, /pl, /nl).
-   EMBED G v3 - Chart.js chart, 10 euro note and annual table.
+   EMBED G v4 - Chart.js chart, 10 euro note (10 zloty on /pl) and annual table.
    Loaded from a page embed, synchronously, at the same position the inline code used to sit. */
 (function () {
   'use strict';
@@ -327,7 +327,7 @@
       '<rect x="0" y="0" width="' + W + '" height="' + H + '" rx="10" fill="url(#lfcInfNoteGrad)"/>' +
       '<circle cx="560" cy="190" r="150" fill="#F1C9A8" opacity="0.55"/>' +
       '<text x="120" y="322" font-family="Georgia, serif" font-size="120" font-weight="700" fill="#2E7D5B" opacity="0.9">10</text>' +
-      '<text x="330" y="250" font-family="Inter, sans-serif" font-size="42" font-weight="700" letter-spacing="6" fill="#B85C2E" opacity="0.85">EURO</text>';
+      '<text x="330" y="250" font-family="Inter, sans-serif" font-size="42" font-weight="700" letter-spacing="6" fill="#B85C2E" opacity="0.85">' + (window.__lfcInfLang === 'pl' ? 'Z\u0141OTYCH' : 'EURO') + '</text>';
   }
   function noteLayer(extraStyle) {
     if (noteImgReady && noteImgSrc) {
@@ -519,7 +519,35 @@
   }, true);
 
   /* Loads the note: fetch base64 -> data URI (no CORS), with a jsDelivr mirror. */
+  /* Polish page: a plain illustrated 10 zloty note drawn here (not a reproduction of the
+     NBP banknote), because the series is in zloty and a euro note would be wrong. */
+  function notaPlSvg() {
+    return '<svg xmlns="http://www.w3.org/2000/svg" width="560" height="296" viewBox="0 0 560 296">' +
+      '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2E2D6"/><stop offset="1" stop-color="#E7C9B4"/></linearGradient>' +
+      '<pattern id="p" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M0 14L14 0" stroke="#C99A7E" stroke-width="0.6" opacity="0.35"/></pattern></defs>' +
+      '<rect width="560" height="296" fill="url(#g)"/><rect width="560" height="296" fill="url(#p)"/>' +
+      '<rect x="14" y="14" width="532" height="268" fill="none" stroke="#A8664A" stroke-width="2" opacity="0.55"/>' +
+      '<circle cx="410" cy="148" r="96" fill="#E0B79E" opacity="0.7"/><circle cx="410" cy="148" r="70" fill="none" stroke="#A8664A" stroke-width="2" opacity="0.5"/>' +
+      '<text x="60" y="190" font-family="Georgia, serif" font-size="128" font-weight="700" fill="#7A3B22" opacity="0.9">10</text>' +
+      '<text x="64" y="240" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="5" fill="#8C4A2F" opacity="0.85">Z\u0141OTYCH</text>' +
+      '<text x="410" y="166" text-anchor="middle" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#7A3B22" opacity="0.8">z\u0142</text>' +
+      '</svg>';
+  }
+
   (function carregarNota() {
+    if (window.__lfcInfLang === 'pl') {
+      var uri = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(notaPlSvg());
+      var imgPl = new Image();
+      imgPl.onload = function () {
+        noteImgEl = imgPl;
+        noteImgReady = true;
+        noteImgSrc = uri;
+        NOTE_ASPECT = 560 / 296;
+        if (window.__lfcInfResults) renderChart(window.__lfcInfResults);
+      };
+      imgPl.src = uri;
+      return;
+    }
     var FONTES = [
       NOTE_B64_URL,
       'https://cdn.jsdelivr.net/gh/franklinsilvapt-arch/lf-ipc-data@main/assets/nota-10-euros.b64'
