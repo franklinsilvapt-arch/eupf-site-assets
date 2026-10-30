@@ -12,7 +12,9 @@
    "rabobank-zzp"
   ]
  },
- "pares": {},
+ "pares": {
+  "revolut|traderepublic": "trade-republic-vs-revolut"
+ },
  "notas": {
   "particulier": [
    "Kosten per maand: de prijs van het pakket met één betaalpas, zonder tijdelijke acties.",
@@ -1029,7 +1031,10 @@
    "logoPad": true,
    "ini": "Re",
    "cta": {
-    "href": "https://www.revolut.com/nl-NL/"
+    "label": "Naar Revolut",
+    "href": "https://revolut.ngih.net/c/2822659/3135652/9626",
+    "aff": "revolut",
+    "nota": "€20 welkomstbonus voor nieuwe klanten, tot en met 31 december 2026."
    },
    "ab": {
     "v": "Vanaf 18 jaar",
@@ -1132,8 +1137,20 @@
     },
     "entidade": {
      "v": "Revolut Bank UAB, bijkantoor Nederland"
+    },
+    "promoSrc": {
+     "v": "€20 welkomstbonus",
+     "src": "https://www.revolut.com/nl-NL/promo/aff-spendxgety-affiliate-spend01get20/"
     }
-   }
+   },
+   "tags": [
+    {
+     "t": "€20 welkomstbonus",
+     "i": "gift",
+     "s": "Nieuwe klanten: geef binnen 1 maand na het openen minimaal €0,01 uit met je kaart. Actie tot en met 31 december 2026",
+     "ate": "2026-12-31"
+    }
+   ]
   },
   {
    "id": "revolut-business",
@@ -1150,7 +1167,8 @@
    "cta": {
     "label": "Naar Revolut Business",
     "href": "https://www.eupersonalfinance.eu/visit/revolutbusiness",
-    "aff": "revolutbusiness"
+    "aff": "revolutbusiness",
+    "nota": "Bonus van €200 bij openen via onze link, tot en met 31 december 2026."
    },
    "src": "https://www.revolut.com/en-NL/legal/business-basic-fees/",
    "f": {
@@ -1252,7 +1270,17 @@
     "entidade": {
      "v": "Revolut Bank UAB, bijkantoor Nederland"
     }
-   }
+   },
+   "tags": [
+    {
+     "t": "€200 welkomstbonus",
+     "i": "gift",
+     "s": "Nieuwe zakelijke klanten: open de rekening via onze link en stort minimaal €0,01. Actie tot en met 31 december 2026",
+     "ate": "2026-12-31"
+    }
+   ],
+   "review": "https://www.eupersonalfinance.eu/nl/articles/revolut-zakelijke-rekening-bonus",
+   "reviewTxt": "Alles over de €200 bonus"
   },
   {
    "id": "knab-zakelijk",
@@ -2398,7 +2426,9 @@
    "logoPad": true,
    "ini": "TR",
    "cta": {
-    "href": "https://traderepublic.com/nl-nl"
+    "label": "Naar Trade Republic",
+    "href": "https://www.eupersonalfinance.eu/visit/trade-republic",
+    "aff": "traderepublic"
    },
    "ab": {
     "v": "Vanaf 18 jaar",
@@ -2494,7 +2524,8 @@
     "entidade": {
      "v": "Trade Republic Bank GmbH, Nederlandse vestiging"
     }
-   }
+   },
+   "review": "https://www.eupersonalfinance.eu/nl/articles/trade-republic-review"
   },
   {
    "id": "openbank",
