@@ -1,0 +1,2149 @@
+{
+ "verificado": "30 oktober 2026",
+ "comparar": {
+  "particular": [
+   "ing",
+   "bunq",
+   "revolut"
+  ],
+  "empresa": [
+   "revolut-business",
+   "knab-zakelijk",
+   "rabobank-zzp"
+  ]
+ },
+ "pares": {},
+ "notas": {
+  "particulier": [
+   "Kosten per maand: de prijs van het pakket met één betaalpas, zonder tijdelijke acties.",
+   "Rente bij deze bank: de hoogste variabele rente die een nieuwe klant zonder betaald abonnement krijgt, meestal op een aparte spaarrekening."
+  ],
+  "zakelijk": [
+   "Kosten per maand: het goedkoopste abonnement, zonder transactiekosten. Die hangen af van hoeveel betalingen je doet.",
+   "Klantonderzoek: sommige banken rekenen hiervoor een vast bedrag per maand, vooral voor een bv. Dat staat onder de kosten per maand.",
+   "Startersacties gelden alleen voor nieuwe ondernemers en staan bij de rekening zelf."
+  ],
+  "algemeen": [
+   "Alle gegevens komen van de websites en tariefdocumenten van de banken zelf, gecontroleerd op {verificado}. Tarieven veranderen: controleer ze bij de bank voordat je een rekening opent."
+  ]
+ },
+ "contas": [
+  {
+   "id": "ing",
+   "seg": "particular",
+   "ordem": 1,
+   "name": "ING",
+   "produto": "ING Go",
+   "tipo": "balcoes",
+   "tipoTxt": "Bank met kantoren",
+   "entidade": "ING Bank N.V.",
+   "logo": "ing.png",
+   "ini": "IN",
+   "cta": {
+    "href": "https://www.ing.nl/particulier/betalen/bankrekeningen/betaalrekening-openen"
+   },
+   "ab": {
+    "v": "Vanaf 18 jaar",
+    "s": "Via de app"
+   },
+   "perfis": {
+    "jovem": {
+     "produto": "ING Jongerenrekening",
+     "idade": "12 t/m 17 jaar",
+     "custoMes": 0,
+     "cartao": "Geen maandkosten",
+     "ab": {
+      "v": "12 t/m 17 jaar"
+     },
+     "nota": "Eerste 2 stortingen per jaar gratis, daarna €6.",
+     "src": "https://www.ing.nl/particulier/kind/producten/jongerenrekening"
+    },
+    "menor": {
+     "produto": "ING Kinderrekening",
+     "idade": "0 t/m 12 jaar",
+     "custoMes": 0,
+     "cartao": "Geen maandkosten",
+     "ab": {
+      "v": "0 t/m 12 jaar"
+     },
+     "nota": "Eerste 3 stortingen per jaar gratis, daarna €6.",
+     "src": "https://assets.ing.com/m/168b84ce21aa46c9/original/ING_Summary-of-costs-and-charges-for-ING-payment-products-for-personal-customers.pdf"
+    },
+    "conjunta": {
+     "v": "2 rekeninghouders",
+     "s": "+€1,20 per maand voor de tweede rekeninghouder",
+     "cartao2": "Pas voor de tweede houder zit in de €1,20",
+     "nota": "Bij ING More zit de tweede rekeninghouder in de prijs",
+     "src": "https://assets.ing.com/m/168b84ce21aa46c9/original/ING_Summary-of-costs-and-charges-for-ING-payment-products-for-personal-customers.pdf"
+    }
+   },
+   "src": "https://assets.ing.com/m/168b84ce21aa46c9/original/ING_Summary-of-costs-and-charges-for-ING-payment-products-for-personal-customers.pdf",
+   "f": {
+    "iban": "NL",
+    "ideal": true,
+    "cartaoFisico": true,
+    "cartaoGratis": true,
+    "jurosMax": 1.25,
+    "jurosWaar": "Oranje Spaarrekening, tot €10.000",
+    "numerario": true,
+    "garantia": "NL",
+    "aberturaOnline": true,
+    "custoMes": 4.0,
+    "custoAno": 48.0
+   },
+   "t": {
+    "manut": {
+     "v": "€4,00 per maand",
+     "s": "ING Go, het instappakket sinds 10 juni 2026. Met fysieke betaalpas en iDEAL/Wero. Duurdere pakketten: More €7, Extra €15,99 en Max €44,99",
+     "src": "https://assets.ing.com/m/168b84ce21aa46c9/original/ING_Summary-of-costs-and-charges-for-ING-payment-products-for-personal-customers.pdf"
+    },
+    "cartao": {
+     "v": "Inbegrepen",
+     "s": "Extra pas €1,20 per maand. Vervangende pas €4,50",
+     "src": "https://assets.ing.com/m/168b84ce21aa46c9/original/ING_Summary-of-costs-and-charges-for-ING-payment-products-for-personal-customers.pdf"
+    },
+    "credito": {
+     "v": "€2,00 per maand",
+     "s": "ING Creditcard More bij ING Go. Koersopslag buiten de euro 2,00%",
+     "src": "https://assets.ing.com/m/168b84ce21aa46c9/original/ING_Summary-of-costs-and-charges-for-ING-payment-products-for-personal-customers.pdf"
+    },
+    "levant": {
+     "v": "Gratis in de EER",
+     "s": "Buiten de EER €3,50 per opname in euro",
+     "src": "https://assets.ing.com/m/168b84ce21aa46c9/original/ING_Summary-of-costs-and-charges-for-ING-payment-products-for-personal-customers.pdf"
+    },
+    "levantFora": {
+     "v": "€3,50 + 1,40%",
+     "s": "Per opname in andere valuta met de betaalpas",
+     "src": "https://assets.ing.com/m/168b84ce21aa46c9/original/ING_Summary-of-costs-and-charges-for-ING-payment-products-for-personal-customers.pdf"
+    },
+    "cambio": {
+     "v": "1,40%",
+     "s": "Koersopslag op betalingen met de pas in andere valuta. Betalen in euro is gratis",
+     "src": "https://assets.ing.com/m/168b84ce21aa46c9/original/ING_Summary-of-costs-and-charges-for-ING-payment-products-for-personal-customers.pdf"
+    },
+    "iban": {
+     "v": "Nederlands (NL)"
+    },
+    "ideal": {
+     "v": "Ja",
+     "s": "iDEAL en Wero zitten in elk pakket",
+     "src": "https://assets.ing.com/m/168b84ce21aa46c9/original/ING_Summary-of-costs-and-charges-for-ING-payment-products-for-personal-customers.pdf"
+    },
+    "numerario": {
+     "v": "Ja, bij Geldmaat",
+     "s": "2 stortingen per jaar gratis, daarna €6 per storting. Munten altijd €6",
+     "src": "https://assets.ing.com/m/168b84ce21aa46c9/original/ING_Summary-of-costs-and-charges-for-ING-payment-products-for-personal-customers.pdf"
+    },
+    "rood": {
+     "v": "Ja",
+     "s": "Variabele rente: de maximale kredietvergoeding min 0,1%",
+     "src": "https://assets.ing.com/m/168b84ce21aa46c9/original/ING_Summary-of-costs-and-charges-for-ING-payment-products-for-personal-customers.pdf"
+    },
+    "poupanca": {
+     "v": "1,25% tot €10.000",
+     "s": "Oranje Spaarrekening, variabel. Daarboven 1,00%. Met ING Extra of Max extra rente, tot 2,25%",
+     "src": "https://www.ing.nl/particulier/sparen/oranje-spaarrekening"
+    },
+    "regulador": {
+     "v": "DNB en AFM",
+     "s": "Nederlandse bankvergunning. De ECB houdt direct toezicht"
+    },
+    "garantia": {
+     "v": "Tot €100.000",
+     "s": "Nederlandse depositogarantie, per rekeninghouder per bank",
+     "src": "https://www.dnb.nl/depositogarantie/"
+    },
+    "abertura": {
+     "v": "Via de app",
+     "s": "Vanaf 18 jaar. Bij een nieuwe betaalrekening krijg je gratis een Oranje Spaarrekening",
+     "src": "https://www.ing.nl/particulier/betalen/bankrekeningen/betaalrekening-openen"
+    },
+    "overstap": {
+     "v": "Ja",
+     "s": "Je nieuwe bank regelt de overstap. Betalingen naar je oude rekening worden 13 maanden doorgestuurd",
+     "src": "https://www.overstapservice.nl/deelnemende-banken/"
+    },
+    "entidade": {
+     "v": "ING Bank N.V."
+    }
+   }
+  },
+  {
+   "id": "rabobank",
+   "seg": "particular",
+   "ordem": 2,
+   "name": "Rabobank",
+   "produto": "Rabo Standaard",
+   "tipo": "balcoes",
+   "tipoTxt": "Bank met kantoren",
+   "entidade": "Coöperatieve Rabobank U.A.",
+   "logo": "rabobank.png",
+   "ini": "Ra",
+   "cta": {
+    "href": "https://www.rabobank.nl/particulieren/klant-worden/online-betaalrekening-openen"
+   },
+   "ab": {
+    "v": "Vanaf 18 jaar",
+    "s": "Via de Rabo App"
+   },
+   "perfis": {
+    "jovem": {
+     "produto": "Rabo JongerenRekening",
+     "idade": "0 t/m 17 jaar",
+     "custoMes": 0,
+     "cartao": "Geen maandkosten",
+     "ab": {
+      "v": "0 t/m 17 jaar",
+      "s": "Ouder of voogd opent"
+     },
+     "nota": "Betaalpas voor je kind wanneer jullie eraan toe zijn.",
+     "src": "https://www.rabobank.nl/particulieren/ouders-en-kinderen/rabo-jongerenrekening"
+    },
+    "menor": {
+     "produto": "Rabo JongerenRekening",
+     "idade": "0 t/m 17 jaar",
+     "custoMes": 0,
+     "cartao": "Geen maandkosten",
+     "ab": {
+      "v": "0 t/m 17 jaar",
+      "s": "Ouder of voogd opent"
+     },
+     "nota": "Betaalpas voor je kind wanneer jullie eraan toe zijn.",
+     "src": "https://www.rabobank.nl/particulieren/ouders-en-kinderen/rabo-jongerenrekening"
+    },
+    "conjunta": {
+     "v": "€4,80 per maand",
+     "s": "Rabo Standaard gezamenlijk, met 2 betaalpassen",
+     "cartao2": "2 passen inbegrepen",
+     "nota": "Openen is gratis. De tweede rekeninghouder moet bevestigen",
+     "src": "https://www.rabobank.nl/particulieren/betalen/gezamenlijke-rekening/rabo-standaard"
+    }
+   },
+   "src": "https://www.rabobank.nl/particulieren/betalen/betaalproducten/kosten-voorwaarden",
+   "f": {
+    "iban": "NL",
+    "ideal": true,
+    "cartaoFisico": true,
+    "cartaoGratis": true,
+    "jurosMax": 1.6,
+    "jurosWaar": "Rabo SpaarRekening, variabel",
+    "numerario": true,
+    "garantia": "NL",
+    "aberturaOnline": true,
+    "custoMes": 3.6,
+    "custoAno": 43.2
+   },
+   "t": {
+    "manut": {
+     "v": "€3,60 per maand",
+     "s": "Rabo Standaard, met gratis betaalpas en Apple Pay en Google Pay",
+     "src": "https://www.rabobank.nl/particulieren/betalen/bankrekening/rabo-basispakket"
+    },
+    "cartao": {
+     "v": "Inbegrepen",
+     "s": "Extra pas €1,20 per maand",
+     "src": "https://www.rabobank.nl/particulieren/betalen/betaalproducten/kosten-voorwaarden"
+    },
+    "credito": {
+     "v": "€2,00 per maand",
+     "s": "Rabo GoldCard. Koersopslag 2%",
+     "src": "https://www.rabobank.nl/particulieren/betalen/creditcard/rabo-goldcard"
+    },
+    "levant": {
+     "v": "Gratis bij Geldmaat",
+     "s": "€0,83 per opname bij andere automaten",
+     "src": "https://www.rabobank.nl/particulieren/betalen/betaalproducten/kosten-voorwaarden"
+    },
+    "levantFora": {
+     "v": "€3,50 + 1,4%",
+     "s": "Per opname in andere valuta met de betaalpas",
+     "src": "https://www.rabobank.nl/particulieren/betalen/betaalproducten/kosten-voorwaarden"
+    },
+    "cambio": {
+     "v": "1,4%",
+     "s": "Koersopslag op betalingen met de pas. Betalen in euro is gratis",
+     "src": "https://www.rabobank.nl/particulieren/betalen/betaalproducten/kosten-voorwaarden"
+    },
+    "iban": {
+     "v": "Nederlands (NL)"
+    },
+    "ideal": {
+     "v": "Ja",
+     "s": "iDEAL | Wero in de Rabo App",
+     "src": "https://www.rabobank.nl/particulieren/online-bankieren/betalen-met-ideal"
+    },
+    "numerario": {
+     "v": "Ja, bij Geldmaat",
+     "s": "Storting 1 t/m 4 per jaar €2,44 per stuk, vanaf de 5e €10",
+     "src": "https://www.rabobank.nl/particulieren/service/betalen-en-opnemen/contant-geld-storten"
+    },
+    "rood": {
+     "v": "Tot €2.500",
+     "s": "11,9% variabele rente. Met BKR-toetsing",
+     "src": "https://www.rabobank.nl/particulieren/betalen/rood-staan"
+    },
+    "poupanca": {
+     "v": "Tot 1,60%",
+     "s": "Rabo SpaarRekening, variabel en vrij opneembaar",
+     "src": "https://www.rabobank.nl/particulieren/sparen/spaarrekening-openen/rabo-spaarrekening"
+    },
+    "regulador": {
+     "v": "DNB en AFM",
+     "s": "Nederlandse bankvergunning. De ECB houdt direct toezicht"
+    },
+    "garantia": {
+     "v": "Tot €100.000",
+     "s": "Nederlandse depositogarantie, per rekeninghouder per bank",
+     "src": "https://www.dnb.nl/depositogarantie/"
+    },
+    "abertura": {
+     "v": "Via de Rabo App",
+     "s": "Vanaf 18 jaar, met woonadres in Nederland en BSN",
+     "src": "https://www.rabobank.nl/particulieren/klant-worden/online-betaalrekening-openen"
+    },
+    "overstap": {
+     "v": "Ja",
+     "s": "Je nieuwe bank regelt de overstap. Betalingen naar je oude rekening worden 13 maanden doorgestuurd",
+     "src": "https://www.overstapservice.nl/deelnemende-banken/"
+    },
+    "entidade": {
+     "v": "Coöperatieve Rabobank U.A."
+    }
+   }
+  },
+  {
+   "id": "abnamro",
+   "seg": "particular",
+   "ordem": 3,
+   "name": "ABN AMRO",
+   "produto": "BasisPakket",
+   "tipo": "balcoes",
+   "tipoTxt": "Bank met kantoren",
+   "entidade": "ABN AMRO Bank N.V.",
+   "logo": "abnamro.svg",
+   "ini": "AA",
+   "cta": {
+    "href": "https://www.abnamro.nl/nl/prive/betalen/bankrekening-openen/voor-jezelf.html"
+   },
+   "ab": {
+    "v": "Vanaf 18 jaar",
+    "s": "Via de app"
+   },
+   "perfis": {
+    "jovem": {
+     "produto": "Jongerengroeirekening",
+     "idade": "0 t/m 17 jaar",
+     "custoMes": 0,
+     "cartao": "Gratis betaalpas",
+     "ab": {
+      "v": "0 t/m 17 jaar",
+      "s": "Ouder opent"
+     },
+     "nota": "Een ouder heeft een particuliere ABN AMRO-betaalrekening nodig.",
+     "src": "https://www.abnamro.nl/nl/prive/betalen/jongerengroeirekening/kinderrekening.html"
+    },
+    "menor": {
+     "produto": "Jongerengroeirekening",
+     "idade": "0 t/m 17 jaar",
+     "custoMes": 0,
+     "cartao": "Gratis betaalpas",
+     "ab": {
+      "v": "0 t/m 17 jaar",
+      "s": "Ouder opent"
+     },
+     "nota": "Een ouder heeft een particuliere ABN AMRO-betaalrekening nodig.",
+     "src": "https://www.abnamro.nl/nl/prive/betalen/jongerengroeirekening/kinderrekening.html"
+    },
+    "conjunta": {
+     "v": "€5,80 per maand",
+     "s": "Gezamenlijke rekening met 2 betaalpassen",
+     "cartao2": "2 passen inbegrepen",
+     "nota": "€4,30 plus €1,50 voor de tweede pas",
+     "src": "https://www.abnamro.nl/en/personal/payments/fees/new-fees-and-terms-2026.html"
+    }
+   },
+   "src": "https://www.abnamro.nl/nl/prive/betalen/tarieven/dagelijkse-bankzaken.html",
+   "f": {
+    "iban": "NL",
+    "ideal": true,
+    "cartaoFisico": true,
+    "cartaoGratis": true,
+    "jurosMax": 1.25,
+    "jurosWaar": "Direct Sparen, variabel",
+    "numerario": true,
+    "garantia": "NL",
+    "aberturaOnline": true,
+    "custoMes": 4.3,
+    "custoAno": 51.6
+   },
+   "t": {
+    "manut": {
+     "v": "€4,30 per maand",
+     "s": "BasisPakket met 1 betaalpas en Internet Bankieren",
+     "src": "https://www.abnamro.nl/nl/prive/betalen/tarieven/dagelijkse-bankzaken.html"
+    },
+    "cartao": {
+     "v": "Inbegrepen",
+     "s": "Extra pas €1,50 per maand. Vervangende pas €5",
+     "src": "https://www.abnamro.nl/nl/prive/betalen/tarieven/dagelijkse-bankzaken.html"
+    },
+    "credito": {
+     "v": "€2,55 per maand",
+     "s": "ABN AMRO Credit Card. Koersopslag 2,00%",
+     "src": "https://www.abnamro.nl/nl/prive/betalen/tarieven/dagelijkse-bankzaken.html"
+    },
+    "levant": {
+     "v": "Gratis tot €17.500 per jaar",
+     "s": "Daarboven €5 + 0,50% per opname",
+     "src": "https://www.abnamro.nl/nl/prive/betalen/tarieven/buitenlands-geld.html"
+    },
+    "levantFora": {
+     "v": "€2,25 + 1,2%",
+     "s": "Per opname in andere valuta",
+     "src": "https://www.abnamro.nl/nl/prive/betalen/tarieven/buitenlands-geld.html"
+    },
+    "cambio": {
+     "v": "€0,15 + 1,2%",
+     "s": "Per betaling in andere valuta. Betalen in euro is gratis",
+     "src": "https://www.abnamro.nl/nl/prive/betalen/tarieven/buitenlands-geld.html"
+    },
+    "iban": {
+     "v": "Nederlands (NL)"
+    },
+    "ideal": {
+     "v": "Ja",
+     "s": "iDEAL gaat geleidelijk over naar Wero",
+     "src": "https://www.abnamro.nl/nl/prive/betalen/geld-overmaken/ideal-wordt-wero.html"
+    },
+    "numerario": {
+     "v": "Ja, bij Geldmaat",
+     "s": "0,5% van het gestorte bedrag. Munten €2,80 + 0,25%",
+     "src": "https://www.abnamro.nl/nl/prive/betalen/tarieven/geld-opnemen-en-storten.html"
+    },
+    "rood": {
+     "v": "€500 tot €5.000",
+     "s": "12,0% debetrente, variabel",
+     "src": "https://www.abnamro.nl/nl/prive/lenen/rood-staan/leenrente.html"
+    },
+    "poupanca": {
+     "v": "1,25%",
+     "s": "Direct Sparen tot €500.000, variabel en vrij opneembaar",
+     "src": "https://www.abnamro.nl/nl/prive/rente/actuele-rente.html"
+    },
+    "regulador": {
+     "v": "DNB en AFM",
+     "s": "Nederlandse bankvergunning. De ECB houdt direct toezicht"
+    },
+    "garantia": {
+     "v": "Tot €100.000",
+     "s": "Nederlandse depositogarantie, per rekeninghouder per bank",
+     "src": "https://www.dnb.nl/depositogarantie/"
+    },
+    "abertura": {
+     "v": "Via de app",
+     "s": "Vanaf 18 jaar, met Nederlands woonadres",
+     "src": "https://www.abnamro.nl/nl/prive/betalen/bankrekening-openen/voor-jezelf.html"
+    },
+    "overstap": {
+     "v": "Ja",
+     "s": "Je nieuwe bank regelt de overstap. Betalingen naar je oude rekening worden 13 maanden doorgestuurd",
+     "src": "https://www.overstapservice.nl/deelnemende-banken/"
+    },
+    "entidade": {
+     "v": "ABN AMRO Bank N.V."
+    }
+   }
+  },
+  {
+   "id": "asn",
+   "seg": "particular",
+   "ordem": 6,
+   "name": "ASN Bank",
+   "produto": "ASN Bankrekening",
+   "tipo": "balcoes",
+   "tipoTxt": "Bank met winkels",
+   "entidade": "ASN Bank N.V.",
+   "logo": "asn.png",
+   "ini": "AS",
+   "cta": {
+    "href": "https://www.asnbank.nl/betalen/asn-bankrekening.html"
+   },
+   "promo": {
+    "m": 3,
+    "t": "Eerste 3 maanden gratis"
+   },
+   "ab": {
+    "v": "Vanaf 18 jaar",
+    "s": "Via de app"
+   },
+   "perfis": {
+    "jovem": {
+     "produto": "ASN Jongerenpakket",
+     "idade": "0 t/m 17 jaar",
+     "custoMes": 0,
+     "cartao": "Betaalpas vanaf 6 jaar",
+     "ab": {
+      "v": "0 t/m 17 jaar",
+      "s": "Ouder opent"
+     },
+     "nota": "De ouder of verzorger opent het pakket en moet klant zijn.",
+     "src": "https://www.asnbank.nl/betalen/asn-jongerenpakket.html"
+    },
+    "menor": {
+     "produto": "ASN Jongerenpakket",
+     "idade": "0 t/m 17 jaar",
+     "custoMes": 0,
+     "cartao": "Betaalpas vanaf 6 jaar",
+     "ab": {
+      "v": "0 t/m 17 jaar",
+      "s": "Ouder opent"
+     },
+     "nota": "De ouder of verzorger opent het pakket en moet klant zijn.",
+     "src": "https://www.asnbank.nl/betalen/asn-jongerenpakket.html"
+    },
+    "conjunta": {
+     "v": "€4,00 per maand",
+     "s": "1 of 2 rekeninghouders, zelfde prijs",
+     "cartao2": "Extra pas €1,35 per maand",
+     "src": "https://www.asnbank.nl/downloads/tarievenwijzer-1.html"
+    }
+   },
+   "src": "https://www.asnbank.nl/downloads/tarievenwijzer-1.html",
+   "f": {
+    "iban": "NL",
+    "ideal": true,
+    "cartaoFisico": true,
+    "cartaoGratis": true,
+    "jurosMax": 1.3,
+    "jurosWaar": "ASN Sparen, tot €25.000",
+    "numerario": true,
+    "garantia": "NL",
+    "aberturaOnline": true,
+    "custoMes": 4.0,
+    "custoAno": 48.0
+   },
+   "t": {
+    "manut": {
+     "v": "€4,00 per maand",
+     "s": "Inclusief 1 betaalpas",
+     "src": "https://www.asnbank.nl/downloads/tarievenwijzer-1.html"
+    },
+    "cartao": {
+     "v": "Inbegrepen",
+     "s": "Extra pas €1,35 per maand. Vervangende pas €4,50",
+     "src": "https://www.asnbank.nl/downloads/tarievenwijzer-1.html"
+    },
+    "credito": {
+     "v": "€37,50 per jaar",
+     "s": "ASN Creditcard via ICS. Koersopslag 2%",
+     "src": "https://www.asnbank.nl/betalen/asn-creditcard.html"
+    },
+    "levant": {
+     "v": "Gratis",
+     "s": "In euro, in Nederland en in het buitenland",
+     "src": "https://www.asnbank.nl/downloads/tarievenwijzer-1.html"
+    },
+    "levantFora": {
+     "v": "€3,50 + 1,4%",
+     "s": "Per opname in andere valuta",
+     "src": "https://www.asnbank.nl/downloads/informatiedocument-vergoedingen-asn-bankrekening.html"
+    },
+    "cambio": {
+     "v": "1,4%",
+     "s": "Van het bedrag, per betaling in andere valuta",
+     "src": "https://www.asnbank.nl/downloads/informatiedocument-vergoedingen-asn-bankrekening.html"
+    },
+    "iban": {
+     "v": "Nederlands (NL)"
+    },
+    "ideal": {
+     "v": "Ja",
+     "s": "iDEAL en Wero",
+     "src": "https://www.asnbank.nl/asn-app-en-asn-online-bankieren/betaalmiddelen/ideal-wordt-wero.html"
+    },
+    "numerario": {
+     "v": "Gratis bij Geldmaat",
+     "s": "Biljetten storten met de betaalpas",
+     "src": "https://www.asnbank.nl/downloads/tarievenwijzer-1.html"
+    },
+    "rood": {
+     "v": "Tot €2.500",
+     "s": "Eerste 3 dagen per maand 0%, daarna 11,0%",
+     "src": "https://www.asnbank.nl/downloads/informatiedocument-vergoedingen-asn-bankrekening.html"
+    },
+    "poupanca": {
+     "v": "1,30% tot €25.000",
+     "s": "ASN Sparen, vrij opneembaar. €25.000 tot €100.000: 1,20%",
+     "src": "https://www.asnbank.nl/sparen/spaarrente.html"
+    },
+    "regulador": {
+     "v": "DNB en AFM",
+     "s": "Nederlandse bankvergunning. De ECB houdt direct toezicht"
+    },
+    "garantia": {
+     "v": "Tot €100.000",
+     "s": "Nederlandse depositogarantie, per rekeninghouder per bank",
+     "src": "https://www.dnb.nl/depositogarantie/"
+    },
+    "abertura": {
+     "v": "Via de app",
+     "s": "Vanaf 18 jaar, in ongeveer 5 minuten",
+     "src": "https://www.asnbank.nl/betalen/asn-bankrekening.html"
+    },
+    "overstap": {
+     "v": "Ja",
+     "s": "Je nieuwe bank regelt de overstap. Betalingen naar je oude rekening worden 13 maanden doorgestuurd",
+     "src": "https://www.overstapservice.nl/deelnemende-banken/"
+    },
+    "entidade": {
+     "v": "ASN Bank N.V."
+    }
+   }
+  },
+  {
+   "id": "triodos",
+   "seg": "particular",
+   "ordem": 8,
+   "name": "Triodos Bank",
+   "produto": "Internet Betaalrekening",
+   "tipo": "digital",
+   "tipoTxt": "Digitale bank",
+   "entidade": "Triodos Bank N.V.",
+   "logo": "triodos.png",
+   "ini": "Tr",
+   "cta": {
+    "href": "https://www.triodos.nl/betalen/internet-betaalrekening"
+   },
+   "ab": {
+    "v": "Vanaf 18 jaar",
+    "s": "Via de app"
+   },
+   "perfis": {
+    "jovem": {
+     "produto": "Jongerentarief",
+     "idade": "18 t/m 22 jaar",
+     "custoMes": 0,
+     "cartao": "Inbegrepen",
+     "ab": {
+      "v": "18 t/m 22 jaar",
+      "s": "Via de app"
+     },
+     "nota": "Van 23 t/m 25 jaar €3,50 per maand.",
+     "src": "https://www.triodos.nl/betalen/internet-betaalrekening"
+    },
+    "menor": {
+     "produto": "Triodos Jongeren Rekening",
+     "idade": "6 t/m 17 jaar",
+     "custoMes": 0,
+     "cartao": "Eigen betaalpas",
+     "ab": {
+      "v": "6 t/m 17 jaar",
+      "s": "Ouder of voogd opent"
+     },
+     "nota": "Daglimiet €250 en geen rood staan.",
+     "src": "https://www.triodos.nl/betalen/jongeren-rekening"
+    },
+    "conjunta": {
+     "v": "€8 per maand",
+     "s": "En/of-rekening voor 2 rekeninghouders",
+     "cartao2": "2 passen inbegrepen",
+     "src": "https://www.triodos.nl/betalen/internet-betaalrekening"
+    }
+   },
+   "src": "https://www.triodos.nl/downloads/informatiedocument-vergoedingen-betaalrekening?id=1c5f1621483d",
+   "f": {
+    "iban": "NL",
+    "ideal": true,
+    "cartaoFisico": true,
+    "cartaoGratis": true,
+    "jurosMax": 1.15,
+    "jurosWaar": "Internet Sparen, tot €10.000",
+    "numerario": false,
+    "garantia": "NL",
+    "aberturaOnline": true,
+    "custoMes": 5.0,
+    "custoAno": 60.0
+   },
+   "t": {
+    "manut": {
+     "v": "€5,00 per maand",
+     "s": "Vanaf 26 jaar. 18 t/m 22 jaar €0, 23 t/m 25 jaar €3,50",
+     "src": "https://www.triodos.nl/betalen/internet-betaalrekening"
+    },
+    "cartao": {
+     "v": "Inbegrepen",
+     "s": "Extra pas €4 per maand. Vervangende pas €6",
+     "src": "https://www.triodos.nl/downloads/informatiedocument-vergoedingen-betaalrekening?id=1c5f1621483d"
+    },
+    "credito": {
+     "v": "Nee",
+     "s": "Triodos heeft geen creditcard",
+     "src": "https://www.triodos.nl/downloads/informatiedocument-vergoedingen-betaalrekening?id=1c5f1621483d"
+    },
+    "levant": {
+     "v": "Gratis",
+     "s": "In euro, in Nederland en in het buitenland",
+     "src": "https://www.triodos.nl/downloads/informatiedocument-vergoedingen-betaalrekening?id=1c5f1621483d"
+    },
+    "levantFora": {
+     "v": "€2,25 + 1%",
+     "s": "Per opname in andere valuta",
+     "src": "https://www.triodos.nl/downloads/informatiedocument-vergoedingen-betaalrekening?id=1c5f1621483d"
+    },
+    "cambio": {
+     "v": "1%",
+     "s": "Van het bedrag, per kaartbetaling in andere valuta",
+     "src": "https://www.triodos.nl/downloads/informatiedocument-vergoedingen-betaalrekening?id=1c5f1621483d"
+    },
+    "iban": {
+     "v": "Nederlands (NL)"
+    },
+    "ideal": {
+     "v": "Ja",
+     "s": "iDEAL en Wero",
+     "src": "https://www.triodos.nl/veelgestelde-vragen/wat-moet-ik-doen-om-met-wero-te-betalen?id=97c2de1c1de3"
+    },
+    "numerario": {
+     "v": "Nee",
+     "s": "Triodos heeft geen filialen en neemt geen contant geld aan",
+     "src": "https://www.triodos.nl/veelgestelde-vragen/hoe-stort-ik-contant-geld-op-mijn-triodos-internet-betaalrekening?id=8aeb11c053cc"
+    },
+    "rood": {
+     "v": "Tot €1.000",
+     "s": "8% effectieve rente per jaar. Ongeoorloofd 12%",
+     "src": "https://www.triodos.nl/downloads/informatiedocument-vergoedingen-betaalrekening?id=1c5f1621483d"
+    },
+    "poupanca": {
+     "v": "1,15% tot €10.000",
+     "s": "Internet Sparen, variabel. €10.000 tot €100.000: 0,90%",
+     "src": "https://www.triodos.nl/sparen/internet-sparen"
+    },
+    "regulador": {
+     "v": "DNB en AFM",
+     "s": "Nederlandse bankvergunning"
+    },
+    "garantia": {
+     "v": "Tot €100.000",
+     "s": "Nederlandse depositogarantie, per rekeninghouder per bank",
+     "src": "https://www.triodos.nl/downloads/informatieblad-depositogarantiestelsel?id=d9f20a784689"
+    },
+    "abertura": {
+     "v": "Via de app",
+     "s": "Met ID-bewijs en selfie, wonend in Nederland",
+     "src": "https://www.triodos.nl/betalen/internet-betaalrekening"
+    },
+    "overstap": {
+     "v": "Ja",
+     "s": "Je nieuwe bank regelt de overstap. Betalingen naar je oude rekening worden 13 maanden doorgestuurd",
+     "src": "https://www.overstapservice.nl/deelnemende-banken/"
+    },
+    "entidade": {
+     "v": "Triodos Bank N.V."
+    }
+   }
+  },
+  {
+   "id": "knab",
+   "seg": "particular",
+   "ordem": 7,
+   "name": "Knab",
+   "produto": "Knab Privérekening",
+   "tipo": "digital",
+   "tipoTxt": "Digitale bank",
+   "entidade": "BAWAG AG, Branch Netherlands (Knab)",
+   "logo": "knab.svg",
+   "logoPad": "sm",
+   "ini": "Kn",
+   "cta": {
+    "href": "https://www.knab.nl/particulier"
+   },
+   "promo": {
+    "m": 12,
+    "t": "12 maanden gratis bij aanvraag tot en met 30 november",
+    "ate": "2026-11-30"
+   },
+   "ab": {
+    "v": "Vanaf 18 jaar",
+    "s": "Via de Knab App"
+   },
+   "perfis": {
+    "conjunta": {
+     "v": "€7 per maand",
+     "s": "2 rekeninghouders, eerste 12 maanden gratis",
+     "cartao2": "Elke rekeninghouder een gratis pas",
+     "src": "https://www.knab.nl/particulier/betalen/bankrekening-openen/gezamenlijke-rekening"
+    }
+   },
+   "src": "https://www.knab.nl/particulier/rente-tarieven",
+   "f": {
+    "iban": "NL",
+    "ideal": true,
+    "cartaoFisico": true,
+    "cartaoGratis": true,
+    "jurosMax": 1.25,
+    "jurosWaar": "Flexibel Sparen, alle saldo's",
+    "numerario": false,
+    "garantia": "AT",
+    "aberturaOnline": true,
+    "custoMes": 6.0,
+    "custoAno": 72.0
+   },
+   "t": {
+    "manut": {
+     "v": "€6 per maand",
+     "s": "Tot 5 betaalrekeningen en onbeperkt spaarpotjes",
+     "src": "https://www.knab.nl/particulier/rente-tarieven"
+    },
+    "cartao": {
+     "v": "Gratis",
+     "s": "Debit Mastercard, elke betaalrekening een eigen pas",
+     "src": "https://www.knab.nl/particulier/betalen/betaalpas"
+    },
+    "credito": {
+     "v": "€31 per jaar",
+     "s": "Vanaf 1 november 2026, tot dan €28. Via ICS",
+     "src": "https://www.knab.nl/particulier/betalen/creditcard/knab-creditcard"
+    },
+    "levant": {
+     "v": "Gratis in eurolanden",
+     "src": "https://www.knab.nl/particulier/rente-tarieven"
+    },
+    "levantFora": {
+     "v": "1,4% koersopslag",
+     "s": "Op de Mastercard-wisselkoers",
+     "src": "https://www.knab.nl/particulier/rente-tarieven"
+    },
+    "cambio": {
+     "v": "1,4%",
+     "s": "Koersopslag op de Mastercard-wisselkoers",
+     "src": "https://www.knab.nl/particulier/rente-tarieven"
+    },
+    "iban": {
+     "v": "Nederlands (NL)"
+    },
+    "ideal": {
+     "v": "Ja",
+     "s": "iDEAL in de Knab App",
+     "src": "https://www.knab.nl/particulier/betalen/geld-overmaken/ideal"
+    },
+    "numerario": {
+     "v": "Nee",
+     "s": "Knab neemt geen contant geld aan, ook niet via Geldmaat",
+     "src": "https://www.knab.nl/particulier/betalen/geld-storten-en-opnemen"
+    },
+    "rood": {
+     "v": "Geen roodstandfaciliteit vermeld",
+     "s": "De tarievenlijst noemt alleen ongeoorloofd rood staan, tegen 0% rente",
+     "src": "https://www.knab.nl/particulier/rente-tarieven"
+    },
+    "poupanca": {
+     "v": "1,25%",
+     "s": "Flexibel Sparen, variabel, voor alle saldo's",
+     "src": "https://www.knab.nl/particulier/rente-tarieven"
+    },
+    "regulador": {
+     "v": "ECB, DNB en AFM",
+     "s": "Knab is een handelsnaam van BAWAG P.S.K. (Oostenrijk), met een bijkantoor in Nederland"
+    },
+    "garantia": {
+     "v": "Tot €100.000",
+     "s": "Oostenrijkse depositogarantie via BAWAG, per rekeninghouder per bank",
+     "src": "https://www.knab.nl/depositogarantiestelsel"
+    },
+    "abertura": {
+     "v": "Via de Knab App",
+     "s": "Vanaf 18 jaar, met BSN en woonadres in Nederland",
+     "src": "https://www.knab.nl/particulier/acceptatiecriteria"
+    },
+    "overstap": {
+     "v": "Ja",
+     "s": "Je nieuwe bank regelt de overstap. Betalingen naar je oude rekening worden 13 maanden doorgestuurd",
+     "src": "https://www.overstapservice.nl/deelnemende-banken/"
+    },
+    "entidade": {
+     "v": "BAWAG AG, Branch Netherlands (Knab)"
+    }
+   }
+  },
+  {
+   "id": "bunq",
+   "seg": "particular",
+   "ordem": 4,
+   "name": "bunq",
+   "produto": "bunq Free",
+   "tipo": "digital",
+   "tipoTxt": "Digitale bank",
+   "entidade": "bunq B.V.",
+   "logo": "bunq.svg",
+   "ini": "bu",
+   "cta": {
+    "href": "https://www.bunq.com/nl-nl"
+   },
+   "ab": {
+    "v": "Vanaf 18 jaar",
+    "s": "Via de app"
+   },
+   "perfis": {
+    "jovem": {
+     "produto": "bunq Pro voor studenten",
+     "idade": "Studenten t/m 25 jaar",
+     "custoMes": 0,
+     "cartao": "Fysieke kaarten inbegrepen",
+     "ab": {
+      "v": "Studenten t/m 25 jaar",
+      "s": "Via de app"
+     },
+     "nota": "Studenten krijgen het Pro-plan gratis.",
+     "src": "https://www.bunq.com/nl-nl/personal/plans"
+    },
+    "menor": {
+     "produto": "Kinderrekening via ouder",
+     "idade": "Tot 18 jaar",
+     "custoMes": 0,
+     "cartao": "Geen maandkosten",
+     "ab": {
+      "v": "Tot 18 jaar",
+      "s": "In de app van de ouder"
+     },
+     "nota": "Gratis op het Pro-plan. De ouder moet zelf Core, Pro of Elite hebben, vanaf €3,99 per maand.",
+     "src": "https://help.bunq.com/articles/how-do-i-open-an-account-for-my-child"
+    },
+    "conjunta": {
+     "v": "Vanaf Core",
+     "s": "Openen kan vanaf Core (€3,99 per maand), tot 10 personen",
+     "cartao2": "Volgens het plan van elke deelnemer",
+     "src": "https://help.bunq.com/nl-nl/articles/whats-a-joint-account-and-how-do-i-create-one"
+    }
+   },
+   "src": "https://www.bunq.com/nl-nl/personal/plans",
+   "f": {
+    "iban": "NL",
+    "ideal": true,
+    "cartaoFisico": false,
+    "cartaoGratis": false,
+    "jurosMax": 1.61,
+    "jurosWaar": "Basisrente, eerste periode 3,11%",
+    "numerario": false,
+    "garantia": "NL",
+    "aberturaOnline": true,
+    "custoMes": 0,
+    "custoAno": 0
+   },
+   "t": {
+    "manut": {
+     "v": "€0 per maand",
+     "s": "bunq Free. Core kost €3,99 en Pro €9,99 per maand",
+     "src": "https://www.bunq.com/nl-nl/personal/plans"
+    },
+    "cartao": {
+     "v": "Alleen digitaal",
+     "s": "Fysieke kaart vanaf Core (€3,99 per maand)",
+     "src": "https://help.bunq.com/en/articles/how-can-i-order-a-card"
+    },
+    "credito": {
+     "v": "Digitale creditcard",
+     "s": "Op alle plannen, zonder jaarkosten. Standaard besteedt de kaart je eigen saldo",
+     "src": "https://www.bunq.com/en-nl/personal/features/credit-card"
+    },
+    "levant": {
+     "v": "€2,99 per opname",
+     "s": "Alleen bij automaten met Apple Pay of Google Pay, want Free heeft geen fysieke kaart",
+     "src": "https://help.bunq.com/en-nl/articles/what-are-my-atm-fees"
+    },
+    "levantFora": {
+     "v": "€2,99 per opname",
+     "s": "Zelfde tarief als in euro",
+     "src": "https://help.bunq.com/en-nl/articles/what-are-my-atm-fees"
+    },
+    "cambio": {
+     "v": "Gratis tot €1.000 per jaar",
+     "s": "Daarna 1,5% per betaling. Vanaf Core zonder limiet",
+     "src": "https://www.bunq.com/en-nl/personal/features/zero-fx"
+    },
+    "iban": {
+     "v": "Nederlands (NL)"
+    },
+    "ideal": {
+     "v": "Ja",
+     "s": "iDEAL en Wero",
+     "src": "https://help.bunq.com/articles/how-do-i-pay-with-ideal"
+    },
+    "numerario": {
+     "v": "Nee",
+     "s": "Niet in bunq Free en niet via Geldmaat",
+     "src": "https://www.bunq.com/nl-nl/personal/plans"
+    },
+    "rood": {
+     "v": "Nee",
+     "s": "bunq biedt geen leningen, krediet of rood staan aan",
+     "src": "https://help.bunq.com/articles/why-do-i-have-a-negative-balance"
+    },
+    "poupanca": {
+     "v": "3,11% bonusrente",
+     "s": "Op al je spaargeld tot de eerstvolgende 1 januari of 1 juli. Daarna geldt de bonusrente onder voorwaarden, anders 1,61%",
+     "src": "https://www.bunq.com/nl-nl/savings"
+    },
+    "regulador": {
+     "v": "DNB en AFM",
+     "s": "Nederlandse bankvergunning"
+    },
+    "garantia": {
+     "v": "Tot €100.000",
+     "s": "Nederlandse depositogarantie, per rekeninghouder per bank",
+     "src": "https://www.bunq.com/nl-nl/savings"
+    },
+    "abertura": {
+     "v": "Via de app",
+     "s": "Voor inwoners van de EER. Je BSN mag je binnen 90 dagen aanleveren",
+     "src": "https://help.bunq.com/articles/who-can-open-a-bunq-personal-account"
+    },
+    "overstap": {
+     "v": "Ja",
+     "s": "Je nieuwe bank regelt de overstap. Betalingen naar je oude rekening worden 13 maanden doorgestuurd",
+     "src": "https://www.overstapservice.nl/deelnemende-banken/"
+    },
+    "entidade": {
+     "v": "bunq B.V."
+    }
+   }
+  },
+  {
+   "id": "revolut",
+   "seg": "particular",
+   "ordem": 5,
+   "name": "Revolut",
+   "produto": "Revolut Standard",
+   "tipo": "digital",
+   "tipoTxt": "Digitale bank",
+   "entidade": "Revolut Bank UAB, bijkantoor Nederland",
+   "logo": "revolut.svg",
+   "logoPad": true,
+   "ini": "Re",
+   "cta": {
+    "href": "https://www.revolut.com/nl-NL/"
+   },
+   "ab": {
+    "v": "Vanaf 18 jaar",
+    "s": "Via de app"
+   },
+   "perfis": {
+    "conjunta": {
+     "v": "2 Revolut-klanten",
+     "s": "Beide 18 jaar of ouder, met een eigen Revolut-rekening",
+     "cartao2": "Elke houder zijn eigen kaart",
+     "src": "https://help.revolut.com/en-NL/help/profile-and-plan/joint-accounts/how-to-set-up-a-joint-account-with-revolut/"
+    }
+   },
+   "src": "https://www.revolut.com/en-NL/legal/standard-fees/",
+   "f": {
+    "iban": "NL",
+    "ideal": true,
+    "cartaoFisico": true,
+    "cartaoGratis": false,
+    "jurosMax": 2.0,
+    "jurosWaar": "Spaarrekening, tot €2.500",
+    "numerario": false,
+    "garantia": "LT",
+    "aberturaOnline": true,
+    "custoMes": 0,
+    "custoAno": 0
+   },
+   "t": {
+    "manut": {
+     "v": "€0 per maand",
+     "s": "Revolut Standard. Betaalde plannen zijn optioneel",
+     "src": "https://www.revolut.com/en-NL/legal/standard-fees/"
+    },
+    "cartao": {
+     "v": "Gratis, bezorging €7,99",
+     "s": "Express €19,99. Virtuele kaarten gratis",
+     "src": "https://www.revolut.com/en-NL/legal/standard-fees/"
+    },
+    "credito": {
+     "v": "Nee",
+     "s": "Revolut biedt in Nederland geen creditcards, leningen of rood staan aan",
+     "src": "https://help.revolut.com/en-NL/help/more/question-credit-eligible-countries/"
+    },
+    "levant": {
+     "v": "5 opnames of €200 per maand gratis",
+     "s": "Daarna 2% van het bedrag, minimaal €1 per opname",
+     "src": "https://www.revolut.com/en-NL/legal/standard-fees/"
+    },
+    "levantFora": {
+     "v": "Zelfde gratis limiet",
+     "s": "Daarna 2% (minimaal €1), plus wisselkosten boven €1.000 per maand",
+     "src": "https://www.revolut.com/en-NL/legal/standard-fees/"
+    },
+    "cambio": {
+     "v": "Gratis tot €1.000 per maand",
+     "s": "Daarna 1%. In het weekend 1% extra",
+     "src": "https://www.revolut.com/en-NL/legal/standard-fees/"
+    },
+    "iban": {
+     "v": "Nederlands (NL)"
+    },
+    "ideal": {
+     "v": "Ja",
+     "s": "Gratis, tot €10.000 per betaling",
+     "src": "https://help.revolut.com/en-NL/help/transfers/outbound-transfers/can-i-pay-with-ideal/what-is-ideal/"
+    },
+    "numerario": {
+     "v": "Nee",
+     "s": "Contant storten kan niet",
+     "src": "https://help.revolut.com/en-NL/help/adding-money/can-i-deposit-cash-to-revolut/"
+    },
+    "rood": {
+     "v": "Nee",
+     "s": "Niet beschikbaar in Nederland",
+     "src": "https://help.revolut.com/en-NL/help/more/question-credit-eligible-countries/"
+    },
+    "poupanca": {
+     "v": "2,00% tot €2.500",
+     "s": "Spaarrekening met directe toegang, variabel. Daarboven 1,00%",
+     "src": "https://www.revolut.com/en-NL/legal/pre-contractual-information-instant-access-savings-account/"
+    },
+    "regulador": {
+     "v": "Bank van Litouwen",
+     "s": "Bankvergunning van de ECB. Bijkantoor in Nederland"
+    },
+    "garantia": {
+     "v": "Tot €100.000",
+     "s": "Litouwse depositogarantie, per rekeninghouder per bank",
+     "src": "https://www.revolut.com/en-NL/legal/pre-contractual-information-instant-access-savings-account/"
+    },
+    "abertura": {
+     "v": "Via de app",
+     "s": "Vanaf 18 jaar, met ID en selfie",
+     "src": "https://help.revolut.com/en-NL/help/profile-and-plan/getting-started-with-revolut/"
+    },
+    "overstap": {
+     "v": "Ja",
+     "s": "Revolut doet mee voor particuliere rekeningen",
+     "src": "https://www.overstapservice.nl/deelnemende-banken/"
+    },
+    "entidade": {
+     "v": "Revolut Bank UAB, bijkantoor Nederland"
+    }
+   }
+  },
+  {
+   "id": "revolut-business",
+   "seg": "empresa",
+   "ordem": 1,
+   "name": "Revolut Business",
+   "produto": "Basic",
+   "tipo": "digital",
+   "tipoTxt": "Digitale bank",
+   "entidade": "Revolut Bank UAB, bijkantoor Nederland",
+   "logo": "revolut.svg",
+   "logoPad": true,
+   "ini": "Re",
+   "cta": {
+    "label": "Naar Revolut Business",
+    "href": "https://www.eupersonalfinance.eu/visit/revolutbusiness",
+    "aff": "revolutbusiness"
+   },
+   "src": "https://www.revolut.com/en-NL/legal/business-basic-fees/",
+   "f": {
+    "iban": "NL",
+    "aberturaOnline": true,
+    "tpa": true,
+    "boekhouding": true,
+    "numerario": false,
+    "eenmanszaak": true,
+    "vof": true,
+    "bv": true,
+    "garantia": "LT",
+    "custoMes": 10.0,
+    "custoAno": 120.0
+   },
+   "t": {
+    "plano": {
+     "v": "Basic",
+     "s": "€10 per maand",
+     "src": "https://revolut.com/en-NL/business/business-account-plans"
+    },
+    "outrosPlanos": {
+     "v": "Grow €35, Scale €125",
+     "s": "Per maand. Meer gratis overboekingen en rente op spaargeld vanaf Grow",
+     "src": "https://revolut.com/en-NL/business/business-account-plans"
+    },
+    "transf": {
+     "v": "10 per maand gratis",
+     "s": "Daarna €0,20 per lokale overboeking. Inkomende eurobetalingen zijn altijd gratis",
+     "src": "https://www.revolut.com/en-NL/legal/business-basic-fees/"
+    },
+    "cartoes": {
+     "v": "Kaarten via de app",
+     "s": "Revolut kan kaart- en bezorgkosten rekenen, het bedrag staat in de app",
+     "src": "https://www.revolut.com/en-NL/legal/business-basic-fees/"
+    },
+    "levant": {
+     "v": "2% per opname",
+     "src": "https://www.revolut.com/en-NL/legal/business-basic-fees/"
+    },
+    "cambio": {
+     "v": "Gratis tot €1.000 per maand",
+     "s": "Daarna 0,6%. Buiten markturen 1% extra",
+     "src": "https://www.revolut.com/en-NL/legal/business-basic-fees/"
+    },
+    "iban": {
+     "v": "Nederlands (NL)"
+    },
+    "boekhouding": {
+     "v": "Ja",
+     "s": "Koppelingen met boekhoudsoftware",
+     "src": "https://revolut.com/en-NL/business/business-account-plans"
+    },
+    "tpa": {
+     "v": "Tap to Pay en Revolut Reader",
+     "s": "Tap to Pay 0,8% + €0,10, Reader 0,8% + €0,02 per betaling met EER-consumentenkaarten",
+     "src": "https://www.revolut.com/en-NL/legal/business-basic-fees/"
+    },
+    "numerario": {
+     "v": "Nee",
+     "s": "Niet via Geldmaat",
+     "src": "https://www.geldmaat.nl/nl/diensten/storten/biljetten-storten/"
+    },
+    "regulador": {
+     "v": "Bank van Litouwen",
+     "s": "Bankvergunning van de ECB. Bijkantoor in Nederland"
+    },
+    "garantia": {
+     "v": "Tot €100.000",
+     "s": "Litouwse depositogarantie, met uitzonderingen voor onder meer financiële instellingen",
+     "src": "https://revolut.com/en-NL/business/business-account-plans"
+    },
+    "rechtsvormen": {
+     "v": "Alle rechtsvormen",
+     "s": "Bv, nv, eenmanszaak, vof, maatschap en cv",
+     "src": "https://help.revolut.com/en-NL/business/help/setting-up-an-account/is-my-business-eligible/what-types-of-business-entities-are-supported/"
+    },
+    "abertura": {
+     "v": "Online",
+     "s": "Via app of web. Support in het Nederlands, 24/7",
+     "src": "https://revolut.com/en-NL/business/business-account-plans"
+    },
+    "overstap": {
+     "v": "Nee",
+     "s": "Revolut doet alleen mee met particuliere rekeningen",
+     "src": "https://www.overstapservice.nl/deelnemende-banken/"
+    },
+    "entidade": {
+     "v": "Revolut Bank UAB, bijkantoor Nederland"
+    }
+   }
+  },
+  {
+   "id": "knab-zakelijk",
+   "seg": "empresa",
+   "ordem": 2,
+   "name": "Knab",
+   "produto": "Zakelijke Rekening",
+   "tipo": "digital",
+   "tipoTxt": "Digitale bank",
+   "entidade": "BAWAG AG, Branch Netherlands (Knab)",
+   "logo": "knab.svg",
+   "logoPad": "sm",
+   "ini": "Kn",
+   "cta": {
+    "href": "https://www.knab.nl/zakelijk/betalen/zakelijke-rekening-openen"
+   },
+   "promo": {
+    "m": 12,
+    "t": "Eerste 12 maanden gratis"
+   },
+   "custoNota": "Bv: €11 per maand",
+   "tags": [
+    {
+     "t": "€100 welkomstbonus",
+     "i": "gift",
+     "s": "Nieuwe zakelijke klant: binnen 2 maanden 5 transacties en €1.000 storten",
+     "ate": "2026-10-31"
+    }
+   ],
+   "src": "https://www.knab.nl/zakelijk/producten/rente-tarieven",
+   "f": {
+    "iban": "NL",
+    "aberturaOnline": true,
+    "tpa": false,
+    "boekhouding": true,
+    "numerario": false,
+    "eenmanszaak": true,
+    "vof": false,
+    "bv": true,
+    "garantia": "AT",
+    "custoMes": 7.0,
+    "custoAno": 84.0
+   },
+   "t": {
+    "plano": {
+     "v": "Knab Zakelijke Rekening",
+     "s": "€7 per maand voor een eenmanszaak, €11 per bv",
+     "src": "https://www.knab.nl/zakelijk/producten/rente-tarieven"
+    },
+    "outrosPlanos": {
+     "v": "Geen",
+     "s": "Knab heeft één zakelijk pakket",
+     "src": "https://www.knab.nl/zakelijk/producten/rente-tarieven"
+    },
+    "transf": {
+     "v": "500 per jaar gratis",
+     "s": "Daarna €0,10 per transactie. In en uit, ook pinbetalingen",
+     "src": "https://www.knab.nl/zakelijk/producten/rente-tarieven"
+    },
+    "cartoes": {
+     "v": "Gratis, tot 5 passen",
+     "s": "Eén pas per betaalrekening",
+     "src": "https://www.knab.nl/zakelijk/betalen/zakelijke-rekening-openen/zakelijke-rekeningen-vergelijken"
+    },
+    "levant": {
+     "v": "Gratis in eurolanden",
+     "src": "https://www.knab.nl/zakelijk/producten/rente-tarieven"
+    },
+    "cambio": {
+     "v": "1,4% koersopslag",
+     "s": "Kaartbetalingen en opnames in andere valuta",
+     "src": "https://www.knab.nl/zakelijk/producten/rente-tarieven"
+    },
+    "iban": {
+     "v": "Nederlands (NL)"
+    },
+    "boekhouding": {
+     "v": "€1,50 per maand",
+     "s": "Onder meer SnelStart, Twinfield, Yuki, Jortt en e-Boekhouden.nl",
+     "src": "https://www.knab.nl/zakelijk/boekhouden/boekhoudkoppeling"
+    },
+    "tpa": {
+     "v": "Nee",
+     "s": "Geen eigen pinautomaat of Tap to Pay in de tarievenlijst",
+     "src": "https://www.knab.nl/zakelijk/producten/rente-tarieven"
+    },
+    "numerario": {
+     "v": "Nee",
+     "s": "Niet via Geldmaat",
+     "src": "https://www.geldmaat.nl/nl/diensten/storten/biljetten-storten/"
+    },
+    "regulador": {
+     "v": "ECB, DNB en AFM",
+     "s": "Knab is een handelsnaam van BAWAG P.S.K. (Oostenrijk), met een bijkantoor in Nederland"
+    },
+    "garantia": {
+     "v": "Tot €100.000",
+     "s": "Oostenrijkse depositogarantie via BAWAG, per rekeninghouder per bank",
+     "src": "https://www.knab.nl/depositogarantiestelsel"
+    },
+    "rechtsvormen": {
+     "v": "Eenmanszaak en bv",
+     "s": "Bv met 1 bestuurder die 100% aandeelhouder is. Geen vof of maatschap",
+     "src": "https://www.knab.nl/zakelijk/betalen/zakelijke-rekening-openen"
+    },
+    "abertura": {
+     "v": "Via de Knab App",
+     "s": "Met KvK-nummer en Nederlands ID. Beoordeling meestal binnen 5 werkdagen",
+     "src": "https://www.knab.nl/zakelijk/betalen/zakelijke-rekening-openen"
+    },
+    "overstap": {
+     "v": "Ja",
+     "s": "Je nieuwe bank regelt de overstap van je zakelijke rekening",
+     "src": "https://www.overstapservice.nl/deelnemende-banken/"
+    },
+    "entidade": {
+     "v": "BAWAG AG, Branch Netherlands (Knab)"
+    }
+   }
+  },
+  {
+   "id": "bunq-business",
+   "seg": "empresa",
+   "ordem": 3,
+   "name": "bunq Business",
+   "produto": "Free",
+   "tipo": "digital",
+   "tipoTxt": "Digitale bank",
+   "entidade": "bunq B.V.",
+   "logo": "bunq.svg",
+   "ini": "bu",
+   "cta": {
+    "href": "https://www.bunq.com/business"
+   },
+   "src": "https://www.bunq.com/business/plans",
+   "f": {
+    "iban": "NL",
+    "aberturaOnline": true,
+    "tpa": true,
+    "boekhouding": true,
+    "numerario": false,
+    "eenmanszaak": true,
+    "vof": false,
+    "bv": false,
+    "garantia": "NL",
+    "custoMes": 0,
+    "custoAno": 0
+   },
+   "t": {
+    "plano": {
+     "v": "Free",
+     "s": "Alleen voor een eenmanszaak",
+     "src": "https://www.bunq.com/business/plans"
+    },
+    "outrosPlanos": {
+     "v": "Core €7,99, Pro €13,99, Elite €23,99",
+     "s": "Per maand. Vof en bv vanaf Core",
+     "src": "https://www.bunq.com/business/plans"
+    },
+    "transf": {
+     "v": "€0,13 per instant betaling",
+     "s": "Ook iDEAL-opwaarderingen. Core heeft 100 gratis instant transacties",
+     "src": "https://help.bunq.com/articles/what-are-the-benefits-of-the-bunq-free-plan"
+    },
+    "cartoes": {
+     "v": "1 digitale kaart",
+     "s": "Debit of credit. Fysieke kaart vanaf Core",
+     "src": "https://help.bunq.com/articles/bunq-free-faq"
+    },
+    "levant": {
+     "v": "Geen fysieke kaart in Free",
+     "s": "Fysieke kaart vanaf Core",
+     "src": "https://help.bunq.com/articles/bunq-free-faq"
+    },
+    "cambio": {
+     "v": "Gratis tot €1.000 per jaar",
+     "s": "ZeroFX in Free. Core zonder jaarlimiet",
+     "src": "https://help.bunq.com/articles/what-are-the-benefits-of-the-bunq-free-plan"
+    },
+    "iban": {
+     "v": "Nederlands (NL)"
+    },
+    "boekhouding": {
+     "v": "50+ pakketten",
+     "s": "Automatische synchronisatie",
+     "src": "https://www.bunq.com/business"
+    },
+    "tpa": {
+     "v": "Tap to Pay, 1,5%",
+     "s": "Per betaling, op iPhone en Android, op elk plan en zonder kaartlezer",
+     "src": "https://help.bunq.com/articles/tap-to-pay"
+    },
+    "numerario": {
+     "v": "Nee",
+     "s": "Niet via Geldmaat",
+     "src": "https://www.geldmaat.nl/nl/diensten/storten/biljetten-storten/"
+    },
+    "regulador": {
+     "v": "DNB en AFM",
+     "s": "Nederlandse bankvergunning"
+    },
+    "garantia": {
+     "v": "Tot €100.000",
+     "s": "Nederlandse depositogarantie",
+     "src": "https://help.bunq.com/articles/bunq-free-faq"
+    },
+    "rechtsvormen": {
+     "v": "Eenmanszaak (Free)",
+     "s": "Vof, bv, stichting en vereniging vanaf Core",
+     "src": "https://help.bunq.com/articles/who-can-open-a-bunq-business-account-in-the-netherlands"
+    },
+    "abertura": {
+     "v": "Via de app",
+     "s": "In ongeveer 5 minuten. Bedrijf ingeschreven bij de KvK",
+     "src": "https://www.bunq.com/business/plans/bunq-free"
+    },
+    "overstap": {
+     "v": "Ja",
+     "s": "Je nieuwe bank regelt de overstap van je zakelijke rekening",
+     "src": "https://www.overstapservice.nl/deelnemende-banken/"
+    },
+    "entidade": {
+     "v": "bunq B.V."
+    }
+   }
+  },
+  {
+   "id": "rabobank-zzp",
+   "seg": "empresa",
+   "ordem": 4,
+   "name": "Rabobank ZZP",
+   "produto": "Rabo ZZP Rekening",
+   "tipo": "balcoes",
+   "tipoTxt": "Bank met kantoren",
+   "entidade": "Coöperatieve Rabobank U.A.",
+   "logo": "rabobank.png",
+   "ini": "Ra",
+   "cta": {
+    "href": "https://www.rabobank.nl/bedrijven/betalen/rekening-openen/rabo-zzp-rekening"
+   },
+   "tags": [
+    {
+     "t": "Starters: 6 maanden gratis",
+     "i": "cal",
+     "s": "Gratis betalen en €100 voor starters. KvK-inschrijving korter dan 1 jaar en eerste zakelijke rekening bij Rabobank. Openen tot en met 3 november 2026",
+     "ate": "2026-11-03"
+    }
+   ],
+   "src": "https://media.rabobank.com/m/375cf723680be56d/original/Tarieven-Rabo-ZZP-Rekening.pdf",
+   "f": {
+    "iban": "NL",
+    "aberturaOnline": true,
+    "tpa": true,
+    "boekhouding": true,
+    "numerario": true,
+    "eenmanszaak": true,
+    "vof": false,
+    "bv": true,
+    "garantia": "NL",
+    "custoMes": 0,
+    "custoAno": 0
+   },
+   "t": {
+    "plano": {
+     "v": "Rabo ZZP Rekening",
+     "s": "Geen vaste maandkosten. Bedoeld voor minder dan 50 betalingen per maand",
+     "src": "https://www.rabobank.nl/bedrijven/betalen/rekening-openen/rabo-zzp-rekening"
+    },
+    "outrosPlanos": {
+     "v": "Rabo Zakelijke Rekening €9,95",
+     "s": "Per maand, voor meer betalingen of meer gebruikers",
+     "src": "https://www.rabobank.nl/bedrijven/betalen/rekening-openen/zakelijke-rekening-vergelijken"
+    },
+    "transf": {
+     "v": "€0,39 per transactie",
+     "s": "Elke bij- of afschrijving in euro, ook pinbetalingen",
+     "src": "https://media.rabobank.com/m/375cf723680be56d/original/Tarieven-Rabo-ZZP-Rekening.pdf"
+    },
+    "cartoes": {
+     "v": "1 pas inbegrepen",
+     "s": "Extra pas €1,65 per maand",
+     "src": "https://media.rabobank.com/m/375cf723680be56d/original/Tarieven-Rabo-ZZP-Rekening.pdf"
+    },
+    "levant": {
+     "v": "€1,25 per opname",
+     "src": "https://media.rabobank.com/m/375cf723680be56d/original/Tarieven-Rabo-ZZP-Rekening.pdf"
+    },
+    "cambio": {
+     "v": "€2,75 + 1,4%",
+     "s": "Per opname in andere valuta",
+     "src": "https://media.rabobank.com/m/375cf723680be56d/original/Tarieven-Rabo-ZZP-Rekening.pdf"
+    },
+    "iban": {
+     "v": "Nederlands (NL)"
+    },
+    "boekhouding": {
+     "v": "€2,00 per maand",
+     "s": "Eerste 6 maanden gratis voor starters",
+     "src": "https://www.rabobank.nl/bedrijven/betalen/rekening-openen/rabo-zzp-rekening"
+    },
+    "tpa": {
+     "v": "Rabo SmartPin, vanaf €2,50",
+     "s": "Per maand, plus €0,21 per betaling (excl. btw). Tap to Pay op iPhone of Android",
+     "src": "https://www.rabobank.nl/bedrijven/betalen/klanten-laten-betalen/rabo-smart-pay/rabo-smartpin/tap-to-pay"
+    },
+    "numerario": {
+     "v": "Ja, bij Geldmaat",
+     "s": "€9,50 per storting",
+     "src": "https://media.rabobank.com/m/375cf723680be56d/original/Tarieven-Rabo-ZZP-Rekening.pdf"
+    },
+    "regulador": {
+     "v": "DNB en AFM",
+     "s": "Nederlandse bankvergunning. De ECB houdt direct toezicht"
+    },
+    "garantia": {
+     "v": "Tot €100.000",
+     "s": "Nederlandse depositogarantie, per rekeninghouder per bank",
+     "src": "https://www.dnb.nl/depositogarantie/"
+    },
+    "rechtsvormen": {
+     "v": "Eenmanszaak en bv",
+     "s": "Bv met één eigenaar. Een vof kiest de Rabo Zakelijke Rekening",
+     "src": "https://www.rabobank.nl/bedrijven/betalen/rekening-openen/rabo-zzp-rekening"
+    },
+    "abertura": {
+     "v": "Online",
+     "s": "Eigenaar meerderjarig en woonachtig in Nederland",
+     "src": "https://www.rabobank.nl/bedrijven/betalen/rekening-openen/rabo-zzp-rekening"
+    },
+    "overstap": {
+     "v": "Ja",
+     "s": "Je nieuwe bank regelt de overstap van je zakelijke rekening",
+     "src": "https://www.overstapservice.nl/deelnemende-banken/"
+    },
+    "entidade": {
+     "v": "Coöperatieve Rabobank U.A."
+    }
+   }
+  },
+  {
+   "id": "rabobank-zakelijk",
+   "seg": "empresa",
+   "ordem": 7,
+   "name": "Rabobank",
+   "produto": "Rabo Zakelijke Rekening",
+   "tipo": "balcoes",
+   "tipoTxt": "Bank met kantoren",
+   "entidade": "Coöperatieve Rabobank U.A.",
+   "logo": "rabobank.png",
+   "ini": "Ra",
+   "cta": {
+    "href": "https://www.rabobank.nl/bedrijven/betalen/rekening-openen/zakelijke-rekening-vergelijken"
+   },
+   "tags": [
+    {
+     "t": "Starters: 6 maanden gratis",
+     "i": "cal",
+     "s": "Gratis betalen en €100 voor starters. KvK-inschrijving korter dan 1 jaar en eerste zakelijke rekening bij Rabobank. Openen tot en met 3 november 2026",
+     "ate": "2026-11-03"
+    }
+   ],
+   "custoNota": "Bv: plus €8,75 klantonderzoek",
+   "src": "https://media.rabobank.com/m/5a925e6f1403d802/original/Tarieven-zakelijk-betalingsverkeer-2026.pdf",
+   "f": {
+    "iban": "NL",
+    "aberturaOnline": true,
+    "tpa": true,
+    "boekhouding": true,
+    "numerario": true,
+    "eenmanszaak": true,
+    "vof": true,
+    "bv": true,
+    "garantia": "NL",
+    "custoMes": 9.95,
+    "custoAno": 119.4
+   },
+   "t": {
+    "plano": {
+     "v": "Rabo Zakelijke Rekening",
+     "s": "€5,30 rekening, €1,65 betaalpas en €3,00 Rabo Business Banking",
+     "src": "https://media.rabobank.com/m/5a925e6f1403d802/original/Tarieven-zakelijk-betalingsverkeer-2026.pdf"
+    },
+    "outrosPlanos": {
+     "v": "Rabo ZZP Rekening €0",
+     "s": "Voor een eenmanszaak of bv met één eigenaar",
+     "src": "https://media.rabobank.com/m/375cf723680be56d/original/Tarieven-Rabo-ZZP-Rekening.pdf"
+    },
+    "transf": {
+     "v": "€0,13 per betaling",
+     "s": "Eurobetaling en incasso-afschrijving",
+     "src": "https://media.rabobank.com/m/5a925e6f1403d802/original/Tarieven-zakelijk-betalingsverkeer-2026.pdf"
+    },
+    "cartoes": {
+     "v": "1 pas inbegrepen",
+     "s": "De pas zit in de €9,95",
+     "src": "https://media.rabobank.com/m/5a925e6f1403d802/original/Tarieven-zakelijk-betalingsverkeer-2026.pdf"
+    },
+    "levant": {
+     "v": "€0,83 per opname",
+     "src": "https://media.rabobank.com/m/5a925e6f1403d802/original/Tarieven-zakelijk-betalingsverkeer-2026.pdf"
+    },
+    "cambio": {
+     "v": "€2,48 + 1,40%",
+     "s": "Per opname in andere valuta",
+     "src": "https://media.rabobank.com/m/5a925e6f1403d802/original/Tarieven-zakelijk-betalingsverkeer-2026.pdf"
+    },
+    "iban": {
+     "v": "Nederlands (NL)"
+    },
+    "boekhouding": {
+     "v": "€2,00 per maand",
+     "s": "Met Rabo Business Banking Pro is de eerste koppeling gratis",
+     "src": "https://www.rabobank.nl/bedrijven/betalen/rekening-openen/zakelijke-rekening-vergelijken"
+    },
+    "tpa": {
+     "v": "Rabo SmartPin, vanaf €2,50",
+     "s": "Per maand, plus €0,21 per betaling (excl. btw). Tap to Pay op iPhone of Android",
+     "src": "https://www.rabobank.nl/bedrijven/betalen/klanten-laten-betalen/rabo-smart-pay/rabo-smartpin/tap-to-pay"
+    },
+    "numerario": {
+     "v": "Ja, bij Geldmaat",
+     "s": "€4,50 per storting + €0,06 per biljet",
+     "src": "https://media.rabobank.com/m/5a925e6f1403d802/original/Tarieven-zakelijk-betalingsverkeer-2026.pdf"
+    },
+    "regulador": {
+     "v": "DNB en AFM",
+     "s": "Nederlandse bankvergunning. De ECB houdt direct toezicht"
+    },
+    "garantia": {
+     "v": "Tot €100.000",
+     "s": "Nederlandse depositogarantie, per rekeninghouder per bank",
+     "src": "https://www.dnb.nl/depositogarantie/"
+    },
+    "rechtsvormen": {
+     "v": "Alle rechtsvormen",
+     "s": "Klantonderzoek bv €8,75 per maand, eenmanszaak en vof €0",
+     "src": "https://media.rabobank.com/m/5a925e6f1403d802/original/Tarieven-zakelijk-betalingsverkeer-2026.pdf"
+    },
+    "abertura": {
+     "v": "Online",
+     "s": "Meerdere gebruikers en machtigingen mogelijk",
+     "src": "https://www.rabobank.nl/bedrijven/betalen/rekening-openen/zakelijke-rekening-vergelijken"
+    },
+    "overstap": {
+     "v": "Ja",
+     "s": "Je nieuwe bank regelt de overstap van je zakelijke rekening",
+     "src": "https://www.overstapservice.nl/deelnemende-banken/"
+    },
+    "entidade": {
+     "v": "Coöperatieve Rabobank U.A."
+    }
+   }
+  },
+  {
+   "id": "ing-zakelijk",
+   "seg": "empresa",
+   "ordem": 5,
+   "name": "ING",
+   "produto": "Ondernemerspakket",
+   "tipo": "balcoes",
+   "tipoTxt": "Bank met kantoren",
+   "entidade": "ING Bank N.V.",
+   "logo": "ing.png",
+   "ini": "IN",
+   "cta": {
+    "href": "https://www.ing.nl/zakelijk/betalen/zakelijke-rekening"
+   },
+   "tags": [
+    {
+     "t": "Starters: 6 maanden gratis",
+     "i": "cal",
+     "s": "Starterspakket voor nieuwe ondernemers, met €150 cashback. Voorwaarden bij ING"
+    }
+   ],
+   "custoNota": "Bv: plus €8,50 klantonderzoek",
+   "src": "https://assets.ing.com/m/75df98bd553f61a0/original/tarievenbrochure-zakelijk-betalingsverkeer.pdf",
+   "f": {
+    "iban": "NL",
+    "aberturaOnline": true,
+    "tpa": true,
+    "boekhouding": true,
+    "numerario": true,
+    "eenmanszaak": true,
+    "vof": true,
+    "bv": true,
+    "garantia": "NL",
+    "custoMes": 9.9,
+    "custoAno": 118.8
+   },
+   "t": {
+    "plano": {
+     "v": "Ondernemerspakket",
+     "s": "Rekening, betaalpas, Mijn ING Zakelijk en app. 2 vertegenwoordigers inbegrepen",
+     "src": "https://assets.ing.com/m/75df98bd553f61a0/original/tarievenbrochure-zakelijk-betalingsverkeer.pdf"
+    },
+    "outrosPlanos": {
+     "v": "Starterspakket",
+     "s": "Voor nieuwe ondernemers: eerste 6 maanden gratis",
+     "src": "https://www.ing.nl/zakelijk/betalen/zakelijke-rekening/starterspakket"
+    },
+    "transf": {
+     "v": "€0,14 per betaling",
+     "s": "Per inkomende en per uitgaande eurobetaling",
+     "src": "https://assets.ing.com/m/75df98bd553f61a0/original/tarievenbrochure-zakelijk-betalingsverkeer.pdf"
+    },
+    "cartoes": {
+     "v": "1 pas inbegrepen",
+     "s": "Extra pas €1,50 per maand",
+     "src": "https://assets.ing.com/m/75df98bd553f61a0/original/tarievenbrochure-zakelijk-betalingsverkeer.pdf"
+    },
+    "levant": {
+     "v": "€0,89 per opname",
+     "s": "In de EER. Buiten de EER €3,50",
+     "src": "https://assets.ing.com/m/75df98bd553f61a0/original/tarievenbrochure-zakelijk-betalingsverkeer.pdf"
+    },
+    "cambio": {
+     "v": "1,40% koersopslag",
+     "s": "Betalen met de pas. Opnemen in andere valuta €3,50 + 1,4%",
+     "src": "https://assets.ing.com/m/75df98bd553f61a0/original/tarievenbrochure-zakelijk-betalingsverkeer.pdf"
+    },
+    "iban": {
+     "v": "Nederlands (NL)"
+    },
+    "boekhouding": {
+     "v": "€3,25 per maand",
+     "s": "Voor 1 rekening. Gratis in het Starterspakket",
+     "src": "https://assets.ing.com/m/75df98bd553f61a0/original/tarievenbrochure-zakelijk-betalingsverkeer.pdf"
+    },
+    "tpa": {
+     "v": "Betaalautomaat €3,65",
+     "s": "Per maand (excl. btw), plus €0,065 per pinbetaling",
+     "src": "https://assets.ing.com/m/75df98bd553f61a0/original/tarievenbrochure-zakelijk-betalingsverkeer.pdf"
+    },
+    "numerario": {
+     "v": "Ja, bij Geldmaat",
+     "s": "€5,08 per storting + 0,26% van het bedrag",
+     "src": "https://assets.ing.com/m/75df98bd553f61a0/original/tarievenbrochure-zakelijk-betalingsverkeer.pdf"
+    },
+    "regulador": {
+     "v": "DNB en AFM",
+     "s": "Nederlandse bankvergunning. De ECB houdt direct toezicht"
+    },
+    "garantia": {
+     "v": "Tot €100.000",
+     "s": "Nederlandse depositogarantie, per rekeninghouder per bank",
+     "src": "https://www.dnb.nl/depositogarantie/"
+    },
+    "rechtsvormen": {
+     "v": "Alle rechtsvormen",
+     "s": "Klantonderzoek bv €8,50 per maand, eenmanszaak en vof €0",
+     "src": "https://assets.ing.com/m/75df98bd553f61a0/original/tarievenbrochure-zakelijk-betalingsverkeer.pdf"
+    },
+    "abertura": {
+     "v": "Online",
+     "src": "https://www.ing.nl/zakelijk/betalen/zakelijke-rekening"
+    },
+    "overstap": {
+     "v": "Ja",
+     "s": "Je nieuwe bank regelt de overstap van je zakelijke rekening",
+     "src": "https://www.overstapservice.nl/deelnemende-banken/"
+    },
+    "entidade": {
+     "v": "ING Bank N.V."
+    }
+   }
+  },
+  {
+   "id": "abnamro-zakelijk",
+   "seg": "empresa",
+   "ordem": 6,
+   "name": "ABN AMRO",
+   "produto": "Slim",
+   "tipo": "balcoes",
+   "tipoTxt": "Bank met kantoren",
+   "entidade": "ABN AMRO Bank N.V.",
+   "logo": "abnamro.svg",
+   "ini": "AA",
+   "cta": {
+    "href": "https://www.abnamro.nl/nl/zakelijk/producten/zakelijke-rekening/index.html"
+   },
+   "tags": [
+    {
+     "t": "Starters: 12 maanden gratis",
+     "i": "cal",
+     "s": "Pakketprijs gratis bij een KvK-inschrijving korter dan 1 jaar"
+    }
+   ],
+   "custoNota": "Bv: plus €6,50 klantonderzoek",
+   "src": "https://www.abnamro.nl/nl/zakelijk/producten/kosten-en-tarieven.html",
+   "f": {
+    "iban": "NL",
+    "aberturaOnline": true,
+    "tpa": true,
+    "boekhouding": false,
+    "numerario": true,
+    "eenmanszaak": true,
+    "vof": false,
+    "bv": true,
+    "garantia": "NL",
+    "custoMes": 9.9,
+    "custoAno": 118.8
+   },
+   "t": {
+    "plano": {
+     "v": "Slim",
+     "s": "1 rekening, 1 pas, Internet Bankieren en app, service via chat",
+     "src": "https://www.abnamro.nl/nl/zakelijk/producten/kosten-en-tarieven.html"
+    },
+    "outrosPlanos": {
+     "v": "Ambitieus €13,75",
+     "s": "Per maand. Met boekhoudkoppeling, telefonische service en 2 passen. Nodig voor een vof",
+     "src": "https://www.abnamro.nl/nl/zakelijk/producten/zakelijke-rekening/index.html"
+    },
+    "transf": {
+     "v": "€0,12 uit, €0,15 in",
+     "s": "Per SEPA-overboeking. Vanaf 1 januari 2027 €0,13 per uitgaande",
+     "src": "https://www.abnamro.nl/nl/zakelijk/producten/kosten-en-tarieven.html"
+    },
+    "cartoes": {
+     "v": "1 pas inbegrepen",
+     "s": "Extra pas €1,50 per maand",
+     "src": "https://www.abnamro.nl/nl/zakelijk/producten/kosten-en-tarieven.html"
+    },
+    "levant": {
+     "v": "€0,35 per opname",
+     "src": "https://www.abnamro.nl/nl/zakelijk/producten/kosten-en-tarieven.html"
+    },
+    "cambio": {
+     "v": "€2,25 + 1,2%",
+     "s": "Per opname in andere valuta",
+     "src": "https://www.abnamro.nl/nl/zakelijk/producten/kosten-en-tarieven.html"
+    },
+    "iban": {
+     "v": "Nederlands (NL)"
+    },
+    "boekhouding": {
+     "v": "Nee",
+     "s": "Niet in Slim. Wel in Ambitieus en Grenzeloos",
+     "src": "https://www.abnamro.nl/nl/zakelijk/producten/zakelijke-rekening/index.html"
+    },
+    "tpa": {
+     "v": "Betaalautomaat €3,70",
+     "s": "Per maand, plus €0,065 per pinbetaling",
+     "src": "https://www.abnamro.nl/nl/zakelijk/producten/kosten-en-tarieven.html"
+    },
+    "numerario": {
+     "v": "Ja, bij Geldmaat",
+     "s": "€3,15 per storting + 0,244% van het bedrag",
+     "src": "https://www.abnamro.nl/nl/zakelijk/producten/kosten-en-tarieven.html"
+    },
+    "regulador": {
+     "v": "DNB en AFM",
+     "s": "Nederlandse bankvergunning. De ECB houdt direct toezicht"
+    },
+    "garantia": {
+     "v": "Tot €100.000",
+     "s": "Nederlandse depositogarantie, per rekeninghouder per bank",
+     "src": "https://www.dnb.nl/depositogarantie/"
+    },
+    "rechtsvormen": {
+     "v": "Eenmanszaak en bv",
+     "s": "Ook maatschap, nv en cv. Een vof heeft Ambitieus of Grenzeloos nodig",
+     "src": "https://www.abnamro.nl/nl/zakelijk/producten/zakelijke-rekening/index.html"
+    },
+    "abertura": {
+     "v": "Online",
+     "s": "In ongeveer 5 minuten, met ID en KvK-nummer",
+     "src": "https://www.abnamro.nl/nl/zakelijk/producten/zakelijke-rekening/index.html"
+    },
+    "overstap": {
+     "v": "Ja",
+     "s": "Je nieuwe bank regelt de overstap van je zakelijke rekening",
+     "src": "https://www.overstapservice.nl/deelnemende-banken/"
+    },
+    "entidade": {
+     "v": "ABN AMRO Bank N.V."
+    }
+   }
+  },
+  {
+   "id": "asn-zakelijk",
+   "seg": "empresa",
+   "ordem": 8,
+   "name": "ASN Bank",
+   "produto": "Betalen Zelfstandigen",
+   "tipo": "balcoes",
+   "tipoTxt": "Bank met winkels",
+   "entidade": "ASN Bank N.V.",
+   "logo": "asn.png",
+   "ini": "AS",
+   "cta": {
+    "href": "https://www.asnbank.nl/zakelijk/asn-betalen-zelfstandigen.html"
+   },
+   "promo": {
+    "m": 3,
+    "t": "Eerste 3 maanden gratis"
+   },
+   "custoNota": "Plus klantonderzoek vanaf €1,50, excl. btw",
+   "src": "https://www.asnbank.nl/downloads/informatiewijzer-asn-bank-zakelijk.html",
+   "f": {
+    "iban": "NL",
+    "aberturaOnline": true,
+    "tpa": true,
+    "boekhouding": true,
+    "numerario": true,
+    "eenmanszaak": true,
+    "vof": false,
+    "bv": true,
+    "garantia": "NL",
+    "custoMes": 7.95,
+    "custoAno": 95.4
+   },
+   "t": {
+    "plano": {
+     "v": "ASN Betalen Zelfstandigen",
+     "s": "Rekening, betaalpas en online bankieren",
+     "src": "https://www.asnbank.nl/zakelijk/asn-betalen-zelfstandigen.html"
+    },
+    "outrosPlanos": {
+     "v": "ASN Zakenrekening €10,70",
+     "s": "Per maand. Voor bv's met meer eigenaren, vof en maatschap",
+     "src": "https://www.asnbank.nl/downloads/informatiewijzer-asn-bank-zakelijk.html"
+    },
+    "transf": {
+     "v": "1.000 per jaar gratis",
+     "s": "Daarna €0,15 per transactie. Eigen betaalverzoek €0,15",
+     "src": "https://www.asnbank.nl/zakelijk/asn-betalen-zelfstandigen.html"
+    },
+    "cartoes": {
+     "v": "1 pas inbegrepen",
+     "s": "Extra pas €1,75 per maand",
+     "src": "https://www.asnbank.nl/downloads/informatiewijzer-asn-bank-zakelijk.html"
+    },
+    "levant": {
+     "v": "Gratis",
+     "s": "In Nederland en binnen de SEPA-landen",
+     "src": "https://www.asnbank.nl/downloads/informatiewijzer-asn-bank-zakelijk.html"
+    },
+    "cambio": {
+     "v": "1,4%",
+     "s": "Per kaartbetaling in andere valuta. Opnemen 1,4% + €3,50",
+     "src": "https://www.asnbank.nl/downloads/informatiewijzer-asn-bank-zakelijk.html"
+    },
+    "iban": {
+     "v": "Nederlands (NL)"
+    },
+    "boekhouding": {
+     "v": "€3,50 per maand",
+     "s": "Excl. btw, per gekoppelde rekening. Onder meer Exact, Twinfield en SnelStart",
+     "src": "https://www.asnbank.nl/zakelijk/boekhoudpakket-koppelen.html"
+    },
+    "tpa": {
+     "v": "Via CCV of SEPAY",
+     "s": "ASN-klanten krijgen korting bij deze 2 leveranciers",
+     "src": "https://www.asnbank.nl/zakelijk/zakelijk-betalen/pinautomaat.html"
+    },
+    "numerario": {
+     "v": "Ja, bij Geldmaat",
+     "s": "€5 per storting",
+     "src": "https://www.asnbank.nl/downloads/informatiewijzer-asn-bank-zakelijk.html"
+    },
+    "regulador": {
+     "v": "DNB en AFM",
+     "s": "Nederlandse bankvergunning. De ECB houdt direct toezicht"
+    },
+    "garantia": {
+     "v": "Tot €100.000",
+     "s": "Nederlandse depositogarantie, per rekeninghouder per bank",
+     "src": "https://www.dnb.nl/depositogarantie/"
+    },
+    "rechtsvormen": {
+     "v": "Eenmanszaak en bv",
+     "s": "Bv met 1 directeur-grootaandeelhouder. Geen compagnon",
+     "src": "https://www.asnbank.nl/zakelijk/asn-betalen-zelfstandigen.html"
+    },
+    "abertura": {
+     "v": "Online",
+     "s": "Vanaf 18 jaar, KvK-inschrijving verplicht",
+     "src": "https://www.asnbank.nl/downloads/voorwaarden-asn-betalen-zelfstandigen-2.html"
+    },
+    "overstap": {
+     "v": "Ja",
+     "s": "Gratis Overstapservice",
+     "src": "https://www.asnbank.nl/zakelijk/asn-betalen-zelfstandigen.html"
+    },
+    "entidade": {
+     "v": "ASN Bank N.V."
+    }
+   }
+  },
+  {
+   "id": "qonto",
+   "seg": "empresa",
+   "ordem": 9,
+   "name": "Qonto",
+   "produto": "Starter",
+   "tipo": "digital",
+   "tipoTxt": "Betaalinstelling",
+   "entidade": "Qonto",
+   "logo": "qonto.png",
+   "ini": "Qo",
+   "cta": {
+    "href": "https://qonto.com/nl"
+   },
+   "tags": [
+    {
+     "t": "€250 welkomstbonus",
+     "i": "gift",
+     "s": "Rekening openen tot en met 30 november 2026. Elke maand €800 kaartuitgaven in de eerste 3 maanden",
+     "ate": "2026-11-30"
+    },
+    {
+     "t": "Geen bank",
+     "w": 1,
+     "i": "shx",
+     "s": "Qonto is een betaalinstelling. Er geldt geen depositogarantie"
+    }
+   ],
+   "custoNota": "Excl. btw",
+   "src": "https://qonto.com/nl/pricing",
+   "f": {
+    "iban": "NL",
+    "aberturaOnline": true,
+    "tpa": true,
+    "boekhouding": false,
+    "numerario": false,
+    "eenmanszaak": true,
+    "vof": true,
+    "bv": true,
+    "garantia": null,
+    "custoMes": 0,
+    "custoAno": 0
+   },
+   "t": {
+    "plano": {
+     "v": "Starter",
+     "s": "€0 per maand, excl. btw",
+     "src": "https://qonto.com/nl/pricing"
+    },
+    "outrosPlanos": {
+     "v": "Basic €7, Smart €15, Premium €25",
+     "s": "Per maand bij een jaarplan, excl. btw",
+     "src": "https://qonto.com/nl/pricing"
+    },
+    "transf": {
+     "v": "5 per maand gratis",
+     "s": "Daarna €0,20 per overboeking",
+     "src": "https://qonto.com/nl/pricing"
+    },
+    "cartoes": {
+     "v": "1 virtuele kaart",
+     "s": "Fysieke One Card €5 per maand. Extra virtuele kaart €2 per maand",
+     "src": "https://qonto.com/nl/pricing"
+    },
+    "levant": {
+     "v": "€2 per opname",
+     "s": "Met de One Card",
+     "src": "https://support-nl.qonto.com/hc/en-us/articles/37466573863185-Can-I-use-my-Qonto-card-abroad"
+    },
+    "cambio": {
+     "v": "2%",
+     "s": "Per kaartbetaling of opname in andere valuta, met de One Card",
+     "src": "https://support-nl.qonto.com/hc/en-us/articles/37466573863185-Can-I-use-my-Qonto-card-abroad"
+    },
+    "iban": {
+     "v": "Nederlands (NL)"
+    },
+    "boekhouding": {
+     "v": "Vanaf Basic",
+     "s": "Koppelingen met Exact, AFAS en meer dan 50 apps",
+     "src": "https://qonto.com/nl/pricing"
+    },
+    "tpa": {
+     "v": "Tap to Pay, 1,2%",
+     "s": "Per betaling op Starter. Vanaf Basic 0,7%",
+     "src": "https://qonto.com/nl/pricing"
+    },
+    "numerario": {
+     "v": "Nee",
+     "s": "Niet via Geldmaat",
+     "src": "https://www.geldmaat.nl/nl/diensten/storten/biljetten-storten/"
+    },
+    "regulador": {
+     "v": "Banque de France (ACPR)",
+     "s": "Franse betaalinstelling"
+    },
+    "garantia": {
+     "v": "Nee",
+     "s": "Qonto is een betaalinstelling, geen bank. Klantgeld staat gescheiden van het vermogen van Qonto",
+     "src": "https://qonto.com/nl/pricing"
+    },
+    "rechtsvormen": {
+     "v": "Zzp, bv en vof",
+     "s": "Qonto heeft aparte aanbiedingen voor zzp'ers, bv's en vof's",
+     "src": "https://qonto.com/nl"
+    },
+    "abertura": {
+     "v": "Online",
+     "s": "Voor bedrijven ingeschreven in Nederland",
+     "src": "https://qonto.com/nl/pricing"
+    },
+    "overstap": {
+     "v": "Nee",
+     "s": "Qonto staat niet in de lijst van deelnemers",
+     "src": "https://www.overstapservice.nl/deelnemende-banken/"
+    },
+    "entidade": {
+     "v": "Qonto"
+    }
+   }
+  }
+ ]
+}
