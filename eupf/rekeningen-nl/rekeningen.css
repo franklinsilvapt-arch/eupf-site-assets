@@ -314,3 +314,6 @@ font-family:'Inter',sans-serif;font-size:16px;color:var(--g900);letter-spacing:-
  #lf-cb .cb-picker{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 @media (prefers-reduced-motion:reduce){#lf-cb *{transition:none!important}}
+
+/* iOS Safari faz zoom em selects com letra < 16px: so no iOS sobe para 16px */
+@supports (-webkit-touch-callout:none){#lf-cb .cb-pselect,#lf-cb .cb-select{font-size:16px}}

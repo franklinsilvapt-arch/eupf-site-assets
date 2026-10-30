@@ -67,7 +67,7 @@
   var VISTAS = [['lista', 'Lijst'], ['comparar', 'Vergelijk']];
   var SORTS = {
     particular: [['rec', 'Aanbevolen'], ['custo', 'Goedkoopst'], ['juros', 'Hoogste rente'], ['nome', 'Naam (A-Z)']],
-    empresa: [['rec', 'Aanbevolen'], ['custo', 'Goedkoopst'], ['nome', 'Naam (A-Z)']]
+    empresa: [['rec', 'Aanbevolen'], ['custo', 'Goedkoopst'], ['juros', 'Hoogste rente'], ['nome', 'Naam (A-Z)']]
   };
   var SECTIONS = {
     particular: [
@@ -87,11 +87,11 @@
         { k: 'rood', l: 'Rood staan' }
       ] },
       { id: 'juros', t: 'Rente en sparen', i: 'pig', rows: [
-        { k: 'jurosMax', calc: 'juros', l: 'Rente bij deze bank', n: 'Hoogste rente voor een nieuwe klant, zonder voorwaarden en zonder betaald abonnement' },
+        { k: 'jurosMax', calc: 'juros', l: 'Rente bij deze bank', n: 'Hoogste rente voor een nieuwe klant zonder betaald abonnement' },
         { k: 'poupanca', l: 'Spaarrekening' }
       ] },
       { id: 'seg', t: 'Veiligheid', i: 'shi', rows: [
-        { k: 'entidade', top: true, l: 'Bank' },
+        { k: 'entidade', top: true, l: 'Aanbieder' },
         { k: 'regulador', l: 'Toezichthouder' },
         { k: 'garantia', l: 'Depositogarantie' }
       ] },
@@ -114,10 +114,15 @@
         { k: 'iban', l: 'IBAN' },
         { k: 'boekhouding', l: 'Boekhoudkoppeling' },
         { k: 'tpa', l: 'Pinautomaat of Tap to Pay' },
-        { k: 'numerario', l: 'Contant geld storten' }
+        { k: 'numerario', l: 'Contant geld storten' },
+        { k: 'credito', l: 'Krediet en rood staan' }
+      ] },
+      { id: 'juros', t: 'Rente', i: 'pig', rows: [
+        { k: 'jurosMax', calc: 'juros', l: 'Rente op spaargeld', n: 'Bij de eigen bank, zonder betaald abonnement' },
+        { k: 'juros', l: 'Zakelijk sparen' }
       ] },
       { id: 'seg', t: 'Veiligheid', i: 'shi', rows: [
-        { k: 'entidade', top: true, l: 'Bank' },
+        { k: 'entidade', top: true, l: 'Aanbieder' },
         { k: 'regulador', l: 'Toezichthouder' },
         { k: 'garantia', l: 'Depositogarantie' }
       ] },
@@ -638,7 +643,7 @@
       var t = e.target, el, key = null;
       if ((el = t.closest('[data-seg]'))) {
         var sg = el.getAttribute('data-seg');
-        if (sg !== S.seg) { S.seg = sg; S.on = {}; S.perfil = ''; S.open = null; S.all = false; if (S.sort === 'juros' && sg === 'empresa') S.sort = 'rec'; key = focusKey(el); renderAll(); refocus(key); }
+        if (sg !== S.seg) { S.seg = sg; S.on = {}; S.perfil = ''; S.open = null; S.all = false; key = focusKey(el); renderAll(); refocus(key); }
         return;
       }
       if ((el = t.closest('[data-chip]'))) { var k = el.getAttribute('data-chip'); S.on[k] = !S.on[k]; S.all = false; key = focusKey(el); renderView(); refocus(key); return; }

@@ -404,6 +404,157 @@ contas.append({'id':'qonto','seg':'empresa','ordem':9,'name':'Qonto','produto':'
   'rechtsvormen':g('Zzp, bv en vof','Qonto heeft aparte aanbiedingen voor zzp\'ers, bv\'s en vof\'s','https://qonto.com/nl'),
   'abertura':g('Online','Voor bedrijven ingeschreven in Nederland',QP),
   'overstap':g('Nee','Qonto staat niet in de lijst van deelnemers',OV)}})
+
+# ---------------- toegevoegd 30-10 (2e ronde) ----------------
+IDL='https://ideal.nl/en/issuers'
+N26P='https://docs.n26.com/legal/06+EU/01+Account/en/13account-pricelist-en.pdf'
+contas.append({'id':'n26','seg':'particular','ordem':9,'name':'N26','produto':'N26 Standard','tipo':'digital','tipoTxt':'Digitale bank','entidade':'N26 Bank SE','logo':'n26.svg','logoPad':True,'ini':'N2',
+ 'cta':{'href':'https://n26.com/en-eu/free-bank-account'},
+ 'ab':{'v':'Vanaf 18 jaar','s':'Via de app'},
+ 'perfis':{
+  'menor':{'produto':'N26 for under 18s','idade':'7 t/m 17 jaar','custoMes':0,'cartao':'Eenmalig €10','ab':{'v':'7 t/m 17 jaar','s':'In de app van de ouder'},'nota':'Een pas gekoppeld aan een Space van de ouder, geen eigen rekening van het kind. Met Standard eenmalig €10 voor één kind.','src':'https://n26.com/en-eu/under-18s'},
+  'conjunta':{'v':'2 rekeninghouders','s':'Zonder extra kosten, ook met Standard','cartao2':'Elke houder zijn eigen kaart','src':'https://n26.com/en-eu/press/press-release/n26-launches-joint-accounts-in-21-new-markets-to-enable-customers-to-manage-finances-as-a-couple'}},
+ 'src':N26P,
+ 'f':{'iban':'DE','ideal':True,'cartaoFisico':True,'cartaoGratis':False,'jurosMax':0.3,'jurosWaar':'Instant Savings, variabel','numerario':False,'garantia':'DE','aberturaOnline':True,'custoMes':0},
+ 't':{'manut':g('€0 per maand','N26 Standard. Boven €50.000 saldo rekent N26 0,5% per jaar. Smart €4,90, Go €9,90, Metal €16,90 per maand',N26P),
+  'cartao':g('Fysieke pas eenmalig €10','Inclusief levering. Virtuele kaart gratis',N26P),
+  'credito':g('Nee','De prijslijst voor Nederland noemt alleen debitkaarten',N26P),
+  'levant':g('2 opnames per maand gratis','Daarna €2 per opname',N26P),
+  'levantFora':g('1,7%','Van het bedrag, per opname in andere valuta',N26P),
+  'cambio':g('Gratis','Mastercard-koers zonder opslag',N26P),
+  'iban':g('Duits (DE)','Spaarrekening en iDEAL werken met een Duits IBAN','https://support.n26.com/en-eu/app-and-features/savings-and-invest/n26-instant-savings-faq-rest-of-europe'),
+  'ideal':g('Ja','iDEAL | Wero gratis met een DE-IBAN','https://support.n26.com/en-eu/payments-transfers-and-withdrawals/cards-and-online-payments/shopping-online-with-ideal'),
+  'numerario':g('Nee','Cash26 werkt alleen voor rekeningen uit Duitsland, Oostenrijk en Spanje','https://support.n26.com/en-eu/app-and-features/cash26/what-is-cash26'),
+  'rood':g('8,9% rente','Rente voor rood staan in de N26-prijslijst voor klanten in Nederland',N26P),
+  'poupanca':g('0,30%','Instant Savings, variabel, zonder introductieperiode','https://n26.com/en-eu/savings-account'),
+  'regulador':g('BaFin','Duitse bank'),
+  'garantia':g('Tot €100.000','Duitse depositogarantie, per rekeninghouder per bank',N26P),
+  'abertura':g('Via de app','Vanaf 18 jaar, wonend in Nederland','https://support.n26.com/en-eu/account-and-personal-details/opening-an-account/how-to-open-my-n26-account'),
+  'overstap':g('Nee','N26 staat niet in de lijst van deelnemers',OV)}})
+TRF='https://assets.traderepublic.com/assets/files/FeeInformation_PaymentAccount_en.pdf'
+contas.append({'id':'traderepublic','seg':'particular','ordem':10,'name':'Trade Republic','produto':'Rekening met Visa-kaart','tipo':'digital','tipoTxt':'Digitale bank','entidade':'Trade Republic Bank GmbH, Nederlandse vestiging','logo':'traderepublic.svg','logoPad':True,'ini':'TR',
+ 'cta':{'href':'https://traderepublic.com/nl-nl'},
+ 'ab':{'v':'Vanaf 18 jaar','s':'Via de app'},
+ 'src':TRF,
+ 'f':{'iban':'NL','ideal':False,'cartaoFisico':True,'cartaoGratis':False,'jurosMax':3.0,'jurosWaar':'Nieuwe klanten, tot €50.000','numerario':False,'garantia':'partner','aberturaOnline':True,'custoMes':0},
+ 't':{'manut':g('€0 per maand','Geen abonnementskosten',TRF),
+  'cartao':g('Fysieke pas eenmalig €5','Classic-kaart. Mirror-kaart €50. Virtuele kaart gratis','https://traderepublic.com/nl-nl/kaart'),
+  'credito':g('Nee','De kaart is een Visa-debitkaart',TRF),
+  'levant':g('Gratis vanaf €100','€1 per opname onder €100','https://traderepublic.com/nl-nl/kaart?openModal=pricing-scheme'),
+  'levantFora':g('Gratis vanaf €100','€1 onder €100. Geen valutakosten van Trade Republic',TRF),
+  'cambio':g('Gratis','Geen valutaopslag van Trade Republic',TRF),
+  'iban':NLiban,
+  'ideal':g('Nee','Trade Republic staat niet in de lijst van iDEAL | Wero-banken',IDL),
+  'numerario':g('Nee','Contant storten kan niet',TRF),
+  'rood':g('Nee','Geen rood staan, ook niet ongeoorloofd',TRF),
+  'poupanca':g('3% tot €50.000','Voor nieuwe klanten, te activeren in de app. Boven €50.000: de depositorente van de ECB, nu 2,5%','https://traderepublic.com/nl-nl/rente'),
+  'regulador':g('BaFin en Bundesbank','Duitse bank met een vestiging in Nederland'),
+  'garantia':g('Tot €100.000','Je geld staat bij partnerbanken en valt onder hun depositogarantie, tot €100.000 per klant','https://traderepublic.com/nl-nl/rente'),
+  'abertura':g('Via de app','Vanaf 18 jaar, wonend en belastingplichtig in Nederland','https://traderepublic.com/nl-nl'),
+  'overstap':g('Nee','Trade Republic staat niet in de lijst van deelnemers',OV)}})
+OBF='https://www.openbank.nl/assets/static/nl/pdf/Products/Informatie_Vergoedingen_Commissies_Open_Betaalrekening.pdf'
+OBP='https://www.openbank.nl/assets/static/nl/pdf/Products/Precontractuele_informatie_Open_Betaalrekening.pdf'
+contas.append({'id':'openbank','seg':'particular','ordem':11,'name':'Openbank','produto':'Open Betaalrekening','tipo':'digital','tipoTxt':'Digitale bank','entidade':'Open Bank, S.A. (Santander)','logo':'openbank.svg','logoPad':True,'ini':'Op',
+ 'cta':{'href':'https://www.openbank.nl/betaalrekening'},
+ 'ab':{'v':'Vanaf 18 jaar','s':'Online of telefonisch'},
+ 'src':OBF,
+ 'f':{'iban':'ES','ideal':False,'cartaoFisico':True,'cartaoGratis':True,'jurosMax':3.1,'jurosWaar':'Welkom Spaarrekening, 6 maanden','numerario':False,'garantia':'ES','aberturaOnline':True,'custoMes':0},
+ 't':{'manut':g('€0 per maand','Optioneel Travel+ voor de pas: €4,99 per maand',OBF),
+  'cartao':g('Gratis','Я42 Mastercard-betaalpas, ook verzending gratis. Extra passen gratis',OBF),
+  'credito':g('Niet op openbank.nl','Openbank Nederland noemt alleen de betaalpas','https://www.openbank.nl/betaalrekening'),
+  'levant':g('5 per maand gratis in de eurozone','Onbeperkt gratis bij automaten van Santander',OBF),
+  'levantFora':g('1,50%','Bij andere banken buiten de eurozone. Gratis bij Santander',OBF),
+  'cambio':g('1,5%','Per betaling in andere valuta. Gratis met Travel+ (€4,99 per maand)','https://www.openbank.nl/assets/static/nl/pdf/Products/Precontractuele_informatie_Betaalpas_Maestro_Mastercard_NL.pdf'),
+  'iban':g('Spaans (ES)','Bruikbaar voor salaris en incasso\'s in Nederland','https://www.openbank.nl/betaalrekening'),
+  'ideal':g('Nee','Openbank staat niet in de lijst van iDEAL | Wero-banken',IDL),
+  'numerario':g('Nee','Niet via Geldmaat',GM),
+  'rood':g('Nee','Geen roodstandfaciliteit. Ongeoorloofd rood staan: 7,25% (JKP 7,50%)',OBP),
+  'poupanca':g('3,10% voor nieuwe klanten','Welkom Spaarrekening, 6 maanden. Daarna Open Spaarrekening 2,25% tot €300.000','https://www.openbank.nl/spaarrekening'),
+  'regulador':g('Banco de España','Spaanse bank van de Santander-groep'),
+  'garantia':g('Tot €100.000','Spaanse depositogarantie, per rekeninghouder per bank',OBP),
+  'abertura':g('Online of telefonisch','Meerderjarig en wonend in Nederland','https://www.openbank.nl/betaalrekening'),
+  'overstap':g('Nee','Openbank staat niet in de lijst van deelnemers',OV)}})
+FP='https://finom.co/nl-nl/pricing/pricing-compare/'
+FF='https://finom.co/en-nl/faq/finom-business-account/'
+contas.append({'id':'finom','seg':'empresa','ordem':10,'name':'Finom','produto':'Solo','tipo':'digital','tipoTxt':'Betaalinstelling','entidade':'Finom Payments B.V.','logo':'finom.png','ini':'Fi',
+ 'cta':{'href':'https://finom.co/nl-nl/'},
+ 'tags':[{'t':'Geen bank','w':1,'i':'shx','s':'Finom is een instelling voor elektronisch geld. Er geldt geen depositogarantie'}],
+ 'src':FP,
+ 'f':{'iban':'NL','aberturaOnline':True,'tpa':False,'boekhouding':True,'numerario':False,'eenmanszaak':True,'vof':True,'bv':True,'garantia':None,'custoMes':0,'jurosMax':0},
+ 't':{'plano':g('Solo','€0 per maand, voor zzp\'ers',FP),
+  'outrosPlanos':g('Basic €21, Smart €40','Per maand. Bij een jaarplan €17 en €34','https://finom.co/nl-nl/pricing/'),
+  'transf':g('Gratis tot €2.500 per maand','Uitgaand, daarboven 0,30% van het bedrag. iDEAL | Wero €1 per betaling',FP),
+  'cartoes':g('1 virtuele kaart','Fysieke kaart alleen via de Prime-kaart, €14,99 per maand',FP),
+  'levant':g('1% per opname','Maximaal €500 per maand, alleen met een fysieke kaart',FP),
+  'cambio':g('3%','Per kaartbetaling of opname in andere valuta',FP),
+  'iban':NLiban,
+  'boekhouding':g('Ja, 30+ pakketten','Inbegrepen in Solo',FP),
+  'tpa':g('Nee','Geen pinautomaat of Tap to Pay op finom.co',FP),
+  'numerario':g('Nee','Niet via Geldmaat',GM),
+  'credito':g('Nee','Geen rood staan. Ongepland negatief saldo: €1 per dag',FP),
+  'jurosMax':g('Geen rente','',FP),
+  'juros':g('Nee','Finom biedt via Aksys een product op basis van geldmarktfondsen (0,5% in Solo). Volgens Finom is dat geen spaarproduct',FP),
+  'regulador':g('DNB','Nederlandse instelling voor elektronisch geld'),
+  'garantia':g('Nee','Finom is geen bank. Klantgeld staat gescheiden bij Europese banken','https://finom.co/nl-nl/business-account/'),
+  'rechtsvormen':g('Alle rechtsvormen','Ook vereniging, stichting, cv en nv',FF),
+  'abertura':g('Online','Verificatie meestal in 1 tot 2 werkdagen',FF),
+  'overstap':g('Nee','Finom staat niet in de lijst van deelnemers',OV)}})
+MP='https://www.mollie.com/nl/products/business-accounts'
+MT='https://secure.mollie.nl/legal/business-account-terms'
+contas.append({'id':'mollie','seg':'empresa','ordem':11,'name':'Mollie','produto':'Zakelijke Rekening','tipo':'digital','tipoTxt':'Betaalinstelling','entidade':'Mollie B.V.','logo':'mollie.svg','logoPad':'sm','ini':'Mo',
+ 'cta':{'href':MP},
+ 'promo':{'m':12,'t':'Eerste 12 maanden gratis'},
+ 'tags':[{'t':'Geen bank','w':1,'i':'shx','s':'Mollie is een instelling voor elektronisch geld. Er geldt geen depositogarantie'}],
+ 'src':'https://www.mollie.com/nl/pricing',
+ 'f':{'iban':'NL','aberturaOnline':True,'tpa':True,'boekhouding':True,'numerario':False,'eenmanszaak':True,'vof':True,'bv':True,'garantia':None,'custoMes':9.0,'jurosMax':0},
+ 't':{'plano':g('Zakelijke Rekening','€9 per maand',MP),
+  'outrosPlanos':g('Geen','Eén abonnement',MP),
+  'transf':g('100 per maand gratis','Uitgaand, daarna €0,20. Inkomend altijd gratis','https://www.mollie.com/nl/pricing'),
+  'cartoes':g('5 virtuele kaarten','Mollie geeft nog geen fysieke kaart uit','https://help.mollie.com/hc/nl/articles/28583223552530-Hoe-maak-ik-een-betaalkaart-aan-voor-mijn-Mollie-zakelijke-rekening'),
+  'levant':g('Nee','Zonder fysieke kaart kun je niet pinnen','https://help.mollie.com/hc/nl/articles/28583223552530-Hoe-maak-ik-een-betaalkaart-aan-voor-mijn-Mollie-zakelijke-rekening'),
+  'cambio':g('Wisselkoers van Mollie','Kaartbetalingen in andere valuta tegen een koers die Mollie vaststelt. Overboeken alleen in euro',MT),
+  'iban':NLiban,
+  'boekhouding':g('Ja, 17 pakketten','Onder meer Exact, Twinfield, SnelStart, Moneybird en Yuki',MP),
+  'tpa':g('Tap to Pay, vanaf 1,50%','Via de Mollie Tap-app, zonder maandkosten. Terminal vanaf €95','https://www.mollie.com/nl/pricing'),
+  'numerario':g('Nee','Niet via Geldmaat',GM),
+  'credito':g('Nee','De rekening is geen kredietfaciliteit',MT),
+  'jurosMax':g('Geen rente','',MT),
+  'juros':g('Nee','Mollie betaalt geen rente op het saldo',MT),
+  'regulador':g('DNB','Nederlandse instelling voor elektronisch geld'),
+  'garantia':g('Nee','Geen depositogarantie. Het geld staat op een aparte beschermingsrekening','https://help.mollie.com/hc/nl/articles/30938095878674-Hoe-beschermt-Mollie-mijn-bedrijf-en-mijn-geld'),
+  'rechtsvormen':g('Eenmanszaak, vof en bv','Gevestigd in Nederland','https://help.mollie.com/hc/nl/articles/25490040188178-Kom-ik-in-aanmerking-voor-de-Mollie-zakelijke-rekening-en-hoe-kan-ik-er-een-aanmaken'),
+  'abertura':g('Online','Via het Mollie Dashboard of de app','https://help.mollie.com/hc/nl/articles/25490040188178-Kom-ik-in-aanmerking-voor-de-Mollie-zakelijke-rekening-en-hoe-kan-ik-er-een-aanmaken'),
+  'overstap':g('Nee','Mollie staat niet in de lijst van deelnemers',OV)}})
+# rente en krediet voor de bestaande zakelijke rekeningen
+RR=json.load(open('/tmp/claude-0/nlcmp/research/business-rente-rood.json'))
+JUR={'revolut-business':('Geen rente op Basic','Spaarrekening vanaf Grow (1,40%) en Scale (1,75%)'),
+ 'knab-zakelijk':('1,25%','Zakelijk Flexibel Sparen, voor alle saldo\'s'),
+ 'bunq-business':('0,75%','Zakelijke spaarrekening, ook in Free. Tot €100.000, max. 3 opnames per maand'),
+ 'rabobank-zzp':('1,60% tot €10.000','Rabo BedrijfsSpaarRekening. €10.000 tot €20.000: 1,50%, tot €100.000: 1,30%'),
+ 'rabobank-zakelijk':('1,60% tot €10.000','Rabo BedrijfsSpaarRekening. €10.000 tot €20.000: 1,50%, tot €100.000: 1,30%'),
+ 'ing-zakelijk':('1,25% tot €10.000','Zakelijke Oranje Spaarrekening. €10.000 tot €100.000: 1,10%'),
+ 'abnamro-zakelijk':('1,25% tot €100.000','Zakelijk Flexibel Sparen. Daarboven 1,05%'),
+ 'asn-zakelijk':('1,30% tot €25.000','ASN Sparen Zakelijk. €25.000 tot €100.000: 1,20%'),
+ 'qonto':('Geen rente op Starter','Vanaf Smart: 5% gedurende 2 maanden, daarna 1,5%')}
+CRE={'revolut-business':('Nee','Revolut Business biedt geen krediet of rood staan'),
+ 'knab-zakelijk':('Geen kredietlimiet','Ongeoorloofd rood staan: 0% rente'),
+ 'bunq-business':('Nee','bunq biedt geen leningen, krediet of rood staan'),
+ 'rabobank-zzp':('Rekening-courantkrediet op aanvraag','Variabele rente plus kredietprovisie. Tot €250.000 zonder jaarcijfers'),
+ 'rabobank-zakelijk':('Rekening-courantkrediet op aanvraag','Variabele rente plus kredietprovisie. Tot €250.000 zonder jaarcijfers'),
+ 'ing-zakelijk':('Rekening-courantkrediet op aanvraag','Limiet hangt af van je omzet. ING publiceert geen vaste rente'),
+ 'abnamro-zakelijk':('Rekening-courantkrediet vanaf €250.000','Kleinere bedragen via New10. Variabele rente op maat'),
+ 'asn-zakelijk':('Nee','Rood staan mag niet. Gebeurt het toch: 11% debetrente'),
+ 'qonto':('Rekeningkrediet tot €15.000','JKP vanaf 13%. Bedrijf minstens 6 maanden oud. Volgens het helpcentrum op alle plannen')}
+for o in contas:
+    if o['seg']=='empresa' and o['id'] in RR:
+        r=RR[o['id']];o['f']['jurosMax']=r['rente']['num']
+        o['t']['juros']=g(JUR[o['id']][0],JUR[o['id']][1],r['rente']['src'])
+        o['t']['credito']=g(CRE[o['id']][0],CRE[o['id']][1],r['rood']['src'])
+# bunq particulier: bonusrente telt als rente voor een nieuwe klant
+for o in contas:
+    if o['id']=='bunq': o['f']['jurosMax']=3.11; o['f']['jurosWaar']='Bonusrente voor nieuwe klanten, tijdelijk'
+    if o['id']=='asn': o['tags']=[{'t':'Ook SNS en RegioBank','i':'ok','s':'SNS Bank en RegioBank zijn namen van ASN Bank N.V.'}]
+
 for o in contas:
     o['f']['custoAno']=round(o['f']['custoMes']*12,2)
     o['t']['entidade']=o['t'].get('entidade',{'v':o['entidade']})
@@ -411,8 +562,8 @@ D={'verificado':'30 oktober 2026',
  'comparar':{'particular':['ing','bunq','revolut'],'empresa':['revolut-business','knab-zakelijk','rabobank-zzp']},
  'pares':{},
  'notas':{
-  'particulier':['Kosten per maand: de prijs van het pakket met één betaalpas, zonder tijdelijke acties.','Rente bij deze bank: de hoogste variabele rente die een nieuwe klant zonder betaald abonnement krijgt, meestal op een aparte spaarrekening.'],
-  'zakelijk':['Kosten per maand: het goedkoopste abonnement, zonder transactiekosten. Die hangen af van hoeveel betalingen je doet.','Klantonderzoek: sommige banken rekenen hiervoor een vast bedrag per maand, vooral voor een bv. Dat staat onder de kosten per maand.','Startersacties gelden alleen voor nieuwe ondernemers en staan bij de rekening zelf.'],
+  'particulier':['Kosten per maand: de prijs van het pakket met één betaalpas, zonder tijdelijke acties.','Rente bij deze bank: de hoogste rente die een nieuwe klant zonder betaald abonnement krijgt, meestal op een aparte spaarrekening. Bij bunq, Trade Republic en Openbank is dat een tijdelijke rente voor nieuwe klanten: de details staan bij elke rekening.'],
+  'zakelijk':['Kosten per maand: het goedkoopste abonnement, zonder transactiekosten. Die hangen af van hoeveel betalingen je doet.','Rente: wat je krijgt op zakelijk spaargeld bij de eigen bank, zonder betaald abonnement. Finom en Mollie zijn geen bank en betalen geen rente.','Klantonderzoek: sommige banken rekenen hiervoor een vast bedrag per maand, vooral voor een bv. Dat staat onder de kosten per maand.','Startersacties gelden alleen voor nieuwe ondernemers en staan bij de rekening zelf.'],
   'algemeen':['Alle gegevens komen van de websites en tariefdocumenten van de banken zelf, gecontroleerd op {verificado}. Tarieven veranderen: controleer ze bij de bank voordat je een rekening opent.']},
  'contas':contas}
 json.dump(D,open('/tmp/claude-0/eupfsa/eupf/rekeningen-nl/dados/rekeningen.json','w'),ensure_ascii=False,indent=1)
