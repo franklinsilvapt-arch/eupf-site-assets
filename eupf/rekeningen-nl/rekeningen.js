@@ -17,7 +17,7 @@
     root.setAttribute('data-cb-ok', '1');
     if (!root.innerHTML.replace(/\s/g, '')) root.innerHTML = '<p class="cb-loading">De vergelijker wordt geladen...</p>';
     (function carregar(tentativas) {
-      fetch(BASE + 'dados/rekeningen.json')
+      fetch(BASE + 'dados/rekeningen.json', { cache: 'no-cache' }) /* revalida sempre: o browser guardava 7 dias */
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
         .then(function (d) {
           D = d; ALL = d.contas;
