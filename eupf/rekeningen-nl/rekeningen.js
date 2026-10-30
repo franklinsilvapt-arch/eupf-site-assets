@@ -319,7 +319,7 @@
   function ctaHtml(o, modo) {
     var c = o.cta || {}, aff = c.aff, label = c.label || 'Naar ' + o.name;
     /* lange namen met kleinere letter, zodat ze op een regel passen */
-    var a = '<a class="cb-btn' + (label.length > 22 ? ' is-xlong' : (label.length > 18 ? ' is-long' : '')) + '" href="' + esc(c.href) + '" target="_blank" rel="noopener' + (aff ? ' sponsored noreferrer' : '') + '"' +
+    var a = '<a class="cb-btn' + (label.length > 22 ? ' is-xlong' : (label.length > 18 ? ' is-long' : '')) + '" href="' + esc(c.href) + '" target="_blank" rel="noopener' + (aff ? ' noreferrer' : '') + '"' +
       (aff ? ' data-afiliado="' + esc(aff) + '" data-afiliado-local="rekeningen-nl"' : '') +
       ' aria-label="' + esc(label + ' (opent de site van ' + o.name + ')') + '"><span>' + esc(label) + '</span>' + ico(IC.out) + '</a>';
     if (modo === 'mini') return a;
