@@ -1,5 +1,5 @@
 {
- "verificado": "30 oktober 2026",
+ "verificado": "3 november 2026",
  "comparar": {
   "particular": [
    "ing",
@@ -64,11 +64,11 @@
     },
     "menor": {
      "produto": "ING Kinderrekening",
-     "idade": "0 t/m 12 jaar",
+     "idade": "0 t/m 11 jaar",
      "custoMes": 0,
      "cartao": "Geen maandkosten",
      "ab": {
-      "v": "0 t/m 12 jaar"
+      "v": "0 t/m 11 jaar"
      },
      "nota": "Eerste 3 stortingen per jaar gratis, daarna €6.",
      "src": "https://assets.ing.com/m/168b84ce21aa46c9/original/ING_Summary-of-costs-and-charges-for-ING-payment-products-for-personal-customers.pdf"
@@ -422,7 +422,7 @@
     },
     "numerario": {
      "v": "Ja, bij Geldmaat",
-     "s": "0,5% van het gestorte bedrag. Munten €2,80 + 0,25%",
+     "s": "0,5% van het gestorte bedrag, boven €10.000 per jaar €5 + 0,5% extra. Munten €2,80 + 0,25%",
      "src": "https://www.abnamro.nl/nl/prive/betalen/tarieven/geld-opnemen-en-storten.html"
     },
     "rood": {
@@ -541,7 +541,7 @@
     "credito": {
      "v": "€37,50 per jaar",
      "s": "ASN Creditcard via ICS. Koersopslag 2%",
-     "src": "https://www.asnbank.nl/betalen/asn-creditcard.html"
+     "src": "https://www.asnbank.nl/betalen/asn-creditcard/kosten-asn-creditcard.html"
     },
     "levant": {
      "v": "Gratis",
@@ -573,8 +573,8 @@
     },
     "rood": {
      "v": "Tot €2.500",
-     "s": "Eerste 3 dagen per maand 0%, daarna 11,0%",
-     "src": "https://www.asnbank.nl/downloads/informatiedocument-vergoedingen-asn-bankrekening.html"
+     "s": "Eerste 3 dagen per maand 0%, daarna 9,0%",
+     "src": "https://www.asnbank.nl/betalen/asn-bankrekening/rood-staan.html"
     },
     "poupanca": {
      "v": "1,30% tot €25.000",
@@ -652,7 +652,7 @@
       "v": "6 t/m 17 jaar",
       "s": "Ouder of voogd opent"
      },
-     "nota": "Daglimiet €250 en geen rood staan.",
+     "nota": "Standaard daglimiet €250 en geen rood staan.",
      "src": "https://www.triodos.nl/betalen/jongeren-rekening"
     },
     "conjunta": {
@@ -668,7 +668,7 @@
     "ideal": true,
     "cartaoFisico": true,
     "cartaoGratis": true,
-    "jurosMax": 1.15,
+    "jurosMax": 1.25,
     "jurosWaar": "Internet Sparen, tot €10.000",
     "numerario": false,
     "garantia": "NL",
@@ -726,8 +726,8 @@
      "src": "https://www.triodos.nl/downloads/informatiedocument-vergoedingen-betaalrekening?id=1c5f1621483d"
     },
     "poupanca": {
-     "v": "1,15% tot €10.000",
-     "s": "Internet Sparen, variabel. €10.000 tot €100.000: 0,90%",
+     "v": "1,25% tot €10.000",
+     "s": "Internet Sparen, variabel. €10.000 tot €25.000: 1,10%. Vanaf €25.000: 1,00%",
      "src": "https://www.triodos.nl/sparen/internet-sparen"
     },
     "regulador": {
@@ -813,7 +813,7 @@
     },
     "credito": {
      "v": "€31 per jaar",
-     "s": "Vanaf 1 november 2026, tot dan €28. Via ICS",
+     "s": "Sinds 1 november 2026. Via ICS",
      "src": "https://www.knab.nl/particulier/betalen/creditcard/knab-creditcard"
     },
     "levant": {
@@ -954,7 +954,7 @@
     },
     "credito": {
      "v": "Digitale creditcard",
-     "s": "Op alle plannen, zonder jaarkosten. Standaard besteedt de kaart je eigen saldo",
+     "s": "Op alle plannen, zonder jaarkosten. Standaard besteedt de kaart je eigen saldo. Krediet tot €5.000 is optioneel en beperkt beschikbaar",
      "src": "https://www.bunq.com/en-nl/personal/features/credit-card"
     },
     "levant": {
@@ -987,12 +987,12 @@
     },
     "rood": {
      "v": "Nee",
-     "s": "bunq biedt geen leningen, krediet of rood staan aan",
-     "src": "https://help.bunq.com/articles/why-do-i-have-a-negative-balance"
+     "s": "Geen rood staan. Wel optioneel krediet op de creditcard, €500 tot €5.000 tegen 12% variabele rente na 8 rentevrije dagen, nu alleen voor de eerste 1.000 toegelaten klanten in Nederland",
+     "src": "https://help.bunq.com/en/articles/credit-card-limit"
     },
     "poupanca": {
      "v": "3,11% bonusrente",
-     "s": "Op al je spaargeld tot de eerstvolgende 1 januari of 1 juli. Daarna geldt de bonusrente onder voorwaarden, anders 1,61%",
+     "s": "Op al je spaargeld tot €100.000, tot de eerstvolgende 1 januari of 1 juli. Daarna 3,11% boven je drempel, eronder 1,61% over de eerste €10.000 en 1,51% over de rest",
      "src": "https://www.bunq.com/nl-nl/savings"
     },
     "regulador": {
@@ -1183,8 +1183,9 @@
     "bv": true,
     "garantia": "LT",
     "custoMes": 10.0,
-    "jurosMax": 0,
-    "custoAno": 120.0
+    "jurosMax": 1.25,
+    "custoAno": 120.0,
+    "jurosWaar": "Spaarrekening, variabel"
    },
    "t": {
     "plano": {
@@ -1194,7 +1195,7 @@
     },
     "outrosPlanos": {
      "v": "Grow €35, Scale €125",
-     "s": "Per maand. Meer gratis overboekingen en rente op spaargeld vanaf Grow",
+     "s": "Per maand. Meer gratis overboekingen en hogere rente op spaargeld",
      "src": "https://revolut.com/en-NL/business/business-account-plans"
     },
     "transf": {
@@ -1241,11 +1242,11 @@
     "garantia": {
      "v": "Tot €100.000",
      "s": "Litouwse depositogarantie, met uitzonderingen voor onder meer financiële instellingen",
-     "src": "https://revolut.com/en-NL/business/business-account-plans"
+     "src": "https://www.revolut.com/en-NL/legal/deposit-insurance-information/"
     },
     "rechtsvormen": {
-     "v": "Alle rechtsvormen",
-     "s": "Bv, nv, eenmanszaak, vof, maatschap en cv",
+     "v": "Meeste rechtsvormen",
+     "s": "Bv, nv, eenmanszaak, vof, maatschap en cv. Geen stichting of coöperatie",
      "src": "https://help.revolut.com/en-NL/business/help/setting-up-an-account/is-my-business-eligible/what-types-of-business-entities-are-supported/"
     },
     "abertura": {
@@ -1259,8 +1260,8 @@
      "src": "https://www.overstapservice.nl/deelnemende-banken/"
     },
     "juros": {
-     "v": "Geen rente op Basic",
-     "s": "Spaarrekening vanaf Grow (1,40%) en Scale (1,75%)",
+     "v": "1,25% op Basic",
+     "s": "Spaarrekening, variabel. Grow 1,40%, Scale 1,75%, Enterprise 2,50%",
      "src": "https://revolut.com/en-NL/business/business-account-plans"
     },
     "credito": {
@@ -1300,17 +1301,10 @@
    },
    "promo": {
     "m": 12,
-    "t": "Eerste 12 maanden gratis"
+    "t": "12 maanden gratis bij aanvraag tot en met 30 november",
+    "ate": "2026-11-30"
    },
    "custoNota": "Bv: €11 per maand",
-   "tags": [
-    {
-     "t": "€100 welkomstbonus",
-     "i": "gift",
-     "s": "Nieuwe zakelijke klant: binnen 2 maanden 5 transacties en €1.000 storten",
-     "ate": "2026-10-31"
-    }
-   ],
    "src": "https://www.knab.nl/zakelijk/producten/rente-tarieven",
    "f": {
     "iban": "NL",
@@ -1344,7 +1338,7 @@
     },
     "cartoes": {
      "v": "Gratis, tot 5 passen",
-     "s": "Eén pas per betaalrekening",
+     "s": "Per betaalrekening 1 fysieke en 1 digitale pas",
      "src": "https://www.knab.nl/zakelijk/betalen/zakelijke-rekening-openen/zakelijke-rekeningen-vergelijken"
     },
     "levant": {
@@ -1455,7 +1449,7 @@
     },
     "transf": {
      "v": "€0,13 per instant betaling",
-     "s": "Ook iDEAL-opwaarderingen. Core heeft 100 gratis instant transacties",
+     "s": "Ook iDEAL-opwaarderingen. Core heeft 100 gratis instant transacties per jaar",
      "src": "https://help.bunq.com/articles/what-are-the-benefits-of-the-bunq-free-plan"
     },
     "cartoes": {
@@ -1517,7 +1511,7 @@
     },
     "juros": {
      "v": "0,75%",
-     "s": "Zakelijke spaarrekening, ook in Free. Tot €100.000, max. 3 opnames per maand",
+     "s": "Zakelijke spaarrekening, ook in Free. Tot €100.000, 2 opnames per maand, 3 na een jaar",
      "src": "https://help.bunq.com/articles/what-massinterest-rate-applies-to-me"
     },
     "credito": {
@@ -1548,8 +1542,7 @@
     {
      "t": "Starters: 6 maanden gratis",
      "i": "cal",
-     "s": "Gratis betalen en €100 voor starters. KvK-inschrijving korter dan 1 jaar en eerste zakelijke rekening bij Rabobank. Openen tot en met 3 november 2026",
-     "ate": "2026-11-03"
+     "s": "Gratis betalen voor starters. KvK-inschrijving korter dan 1 jaar en eerste zakelijke rekening bij Rabobank"
     }
    ],
    "src": "https://media.rabobank.com/m/375cf723680be56d/original/Tarieven-Rabo-ZZP-Rekening.pdf",
@@ -1646,7 +1639,7 @@
     },
     "credito": {
      "v": "Rekening-courantkrediet op aanvraag",
-     "s": "Variabele rente plus kredietprovisie. Tot €250.000 zonder jaarcijfers",
+     "s": "Variabele rente plus kredietprovisie. Tot €250.000 zijn jaarcijfers niet altijd nodig",
      "src": "https://www.rabobank.nl/bedrijven/zakelijk-financieren/rekening-courant-krediet"
     },
     "entidade": {
@@ -1672,8 +1665,7 @@
     {
      "t": "Starters: 6 maanden gratis",
      "i": "cal",
-     "s": "Gratis betalen en €100 voor starters. KvK-inschrijving korter dan 1 jaar en eerste zakelijke rekening bij Rabobank. Openen tot en met 3 november 2026",
-     "ate": "2026-11-03"
+     "s": "Gratis betalen voor starters. KvK-inschrijving korter dan 1 jaar en eerste zakelijke rekening bij Rabobank"
     }
    ],
    "custoNota": "Bv: plus €8,75 klantonderzoek",
@@ -1737,8 +1729,8 @@
     },
     "numerario": {
      "v": "Ja, bij Geldmaat",
-     "s": "€4,50 per storting + €0,06 per biljet",
-     "src": "https://media.rabobank.com/m/5a925e6f1403d802/original/Tarieven-zakelijk-betalingsverkeer-2026.pdf"
+     "s": "€4,50 per storting + €0,06 per biljet kleiner dan €500. Biljet van €500: €5,64",
+     "src": "https://www.rabobank.nl/bedrijven/service/betalen-en-ontvangen/contant-geld-storten-voor-bedrijven"
     },
     "regulador": {
      "v": "DNB en AFM",
@@ -1771,7 +1763,7 @@
     },
     "credito": {
      "v": "Rekening-courantkrediet op aanvraag",
-     "s": "Variabele rente plus kredietprovisie. Tot €250.000 zonder jaarcijfers",
+     "s": "Variabele rente plus kredietprovisie. Tot €250.000 zijn jaarcijfers niet altijd nodig",
      "src": "https://www.rabobank.nl/bedrijven/zakelijk-financieren/rekening-courant-krediet"
     },
     "entidade": {
@@ -1797,7 +1789,7 @@
     {
      "t": "Starters: 6 maanden gratis",
      "i": "cal",
-     "s": "Starterspakket voor nieuwe ondernemers, met €150 cashback. Voorwaarden bij ING"
+     "s": "Starterspakket voor nieuwe ondernemers, met €200 cashback. Voorwaarden bij ING"
     }
    ],
    "custoNota": "Bv: plus €8,50 klantonderzoek",
@@ -1921,10 +1913,11 @@
     {
      "t": "Starters: 12 maanden gratis",
      "i": "cal",
-     "s": "Pakketprijs gratis bij een KvK-inschrijving korter dan 1 jaar"
+     "s": "Pakketprijs gratis bij een KvK-inschrijving korter dan 1 jaar",
+     "ate": "2027-02-28"
     }
    ],
-   "custoNota": "Bv: plus €6,50 klantonderzoek",
+   "custoNota": "Bv: plus €6,50 klantonderzoek na 1 jaar, vanaf 1 januari 2027 €7,50",
    "src": "https://www.abnamro.nl/nl/zakelijk/producten/kosten-en-tarieven.html",
    "f": {
     "iban": "NL",
@@ -1958,8 +1951,8 @@
     },
     "cartoes": {
      "v": "1 pas inbegrepen",
-     "s": "Extra pas €1,50 per maand",
-     "src": "https://www.abnamro.nl/nl/zakelijk/producten/kosten-en-tarieven.html"
+     "s": "Extra pas niet mogelijk in Slim. Wel in Ambitieus en Grenzeloos",
+     "src": "https://www.abnamro.nl/nl/zakelijk/producten/zakelijke-rekening/volop-ondernemen-slim.html"
     },
     "levant": {
      "v": "€0,35 per opname",
@@ -2228,8 +2221,8 @@
      "v": "Nederlands (NL)"
     },
     "boekhouding": {
-     "v": "Vanaf Basic",
-     "s": "Koppelingen met Exact, AFAS en meer dan 50 apps",
+     "v": "Vanaf Smart",
+     "s": "Boekhoudintegraties en toegang voor je boekhouder vanaf Smart. Basic koppelt facturen en bonnetjes met externe tools",
      "src": "https://qonto.com/nl/pricing"
     },
     "tpa": {
@@ -2273,7 +2266,7 @@
     },
     "credito": {
      "v": "Rekeningkrediet tot €15.000",
-     "s": "JKP vanaf 13%. Bedrijf minstens 6 maanden oud. Volgens het helpcentrum op alle plannen",
+     "s": "JKP vanaf 13%. Bedrijf minstens 6 maanden oud. Tot €5.000 in de eerste 6 maanden bij Qonto. Volgens het helpcentrum op alle plannen",
      "src": "https://qonto.com/nl/financing/overdraft"
     },
     "entidade": {
@@ -2713,9 +2706,9 @@
      "v": "Nederlands (NL)"
     },
     "boekhouding": {
-     "v": "Ja, 30+ pakketten",
+     "v": "Ja, tot 30 pakketten",
      "s": "Inbegrepen in Solo",
-     "src": "https://finom.co/nl-nl/pricing/pricing-compare/"
+     "src": "https://finom.co/en-nl/freelancers/"
     },
     "tpa": {
      "v": "Nee",
@@ -2738,8 +2731,8 @@
     },
     "juros": {
      "v": "Nee",
-     "s": "Finom biedt via Aksys een product op basis van geldmarktfondsen (0,5% in Solo). Volgens Finom is dat geen spaarproduct",
-     "src": "https://finom.co/nl-nl/pricing/pricing-compare/"
+     "s": "Finom biedt via Aksys een product op basis van geldmarktfondsen: 5% gedurende 5 maanden, daarna 0,5% voor zzp'ers. Volgens Finom is dat geen spaarproduct",
+     "src": "https://finom.co/en-nl/interest-wallet/"
     },
     "regulador": {
      "v": "DNB",
