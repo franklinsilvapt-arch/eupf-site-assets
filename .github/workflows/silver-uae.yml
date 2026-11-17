@@ -1,0 +1,30 @@
+name: BrokerMatch silver UAE data
+
+on:
+  schedule:
+    - cron: '23 3-19/2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: silver-uae
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Update silver data
+        run: python brokermatch/silver-uae/update.py
+      - name: Commit if changed
+        run: |
+          git config user.name "brokermatch-bot"
+          git config user.email "bot@brokermatch.ae"
+          git add brokermatch/silver-uae/silver-data.json brokermatch/silver-uae/silver-archive.json
+          git diff --cached --quiet || (git commit -m "silver-uae: data update" && git pull --rebase && git push)
