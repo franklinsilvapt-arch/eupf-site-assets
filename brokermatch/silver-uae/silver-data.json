@@ -1,0 +1,23 @@
+{
+ "spot": {
+  "usdOz": 47.505,
+  "aedG": 5.609,
+  "at": "2026-11-17T14:28:01Z",
+  "date": "2026-11-17",
+  "stale": false
+ },
+ "prev": null,
+ "history": [
+  {
+   "d": "2026-11-17",
+   "g": 5.609
+  }
+ ],
+ "historySource": "archive",
+ "peg": 3.6725,
+ "updatedAt": "2026-11-17T14:28:01Z",
+ "sources": {
+  "spot": "api.gold-api.com (XAG)",
+  "history": "Stooq XAGUSD daily close, AED at the 3.6725 peg"
+ }
+}
