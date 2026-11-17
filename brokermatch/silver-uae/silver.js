@@ -231,7 +231,7 @@
       </div>
       <div class="bmc-silver-sim-result">
         <div class="bmc-silver-sim-row"><span>Weight in grams</span><span id="bmc-silver-r-grams">-</span></div>
-        <div class="bmc-silver-sim-row"><span>Pure silver content</span><span id="bmc-silver-r-pure">-</span></div>
+        <div class="bmc-silver-sim-row"><span>Equivalent in 999 silver</span><span id="bmc-silver-r-pure">-</span></div>
         <div class="bmc-silver-sim-main">
           <span class="bmc-silver-sim-main-label">Value at today's spot price</span>
           <span class="bmc-silver-sim-main-val" id="bmc-silver-r-aed">-</span>
@@ -347,7 +347,7 @@
       </div>
       <div class="bmc-silver-sim-result">
         <div class="bmc-silver-sim-row"><span>الوزن بالغرام</span><span id="bmc-silver-r-grams">-</span></div>
-        <div class="bmc-silver-sim-row"><span>محتوى الفضة الخالصة</span><span id="bmc-silver-r-pure">-</span></div>
+        <div class="bmc-silver-sim-row"><span>ما يعادله من الفضة عيار 999</span><span id="bmc-silver-r-pure">-</span></div>
         <div class="bmc-silver-sim-main">
           <span class="bmc-silver-sim-main-label">القيمة بالسعر الفوري اليوم</span>
           <span class="bmc-silver-sim-main-val" id="bmc-silver-r-aed">-</span>
@@ -503,8 +503,8 @@
     function renderSim(){
       var w=parseNum(document.getElementById('bmc-silver-w').value);
       var grams=w*(simU==='tola'?TOLA:simU==='oz'?OZ:simU==='kg'?1000:1);
-      var pure=grams*PURITY[simP], g=gAed();
-      var val=isNum(g)?grams*PURITY[simP]/0.999*g:null;
+      var pure=grams*PURITY[simP]/0.999, g=gAed();
+      var val=isNum(g)?pure*g:null;
       set('bmc-silver-r-grams', fmt(grams, grams%1?2:0)+L(' g',' غ'));
       set('bmc-silver-r-pure', fmt(pure, pure%1?2:0)+L(' g',' غ'));
       set('bmc-silver-r-aed', money(val,'AED'));
