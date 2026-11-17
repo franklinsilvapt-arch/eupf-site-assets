@@ -2,17 +2,15 @@
 
 Sources
 - Spot price (USD per troy ounce): https://api.gold-api.com/price/XAG
-- Daily history: Stooq XAGUSD daily closes (https://stooq.com/q/d/l/?s=xagusd&i=d),
-  converted to AED at the 3.6725 peg. If Stooq fails, the page keeps its own archive of
+- Daily history: LBMA Silver Price (https://prices.lbma.org.uk/json/silver.json), USD per
+  ounce, converted to AED at the 3.6725 peg. Fallback: COMEX SI=F daily close (Yahoo). If both fail, the page keeps its own archive of
   one spot reading per UAE day (silver-archive.json), so the chart never goes empty.
 
 Rules: never overwrite good data with nothing. If a source fails, the last good values stay
 in the file and the source is flagged as stale. The run fails only when the spot price has
 not been refreshed for more than 2 days.
 """
-import csv
 import datetime as dt
-import io
 import json
 import os
 import sys
@@ -52,23 +50,30 @@ def get_spot():
     return p
 
 
-def get_stooq(days=400):
-    raw = fetch("https://stooq.com/q/d/l/?s=xagusd&i=d", as_json=False)
-    rows = list(csv.DictReader(io.StringIO(raw)))
-    if not rows or "Close" not in rows[0]:
-        raise ValueError("unexpected Stooq answer: %r" % raw[:80])
+def _window(rows, days=400):
     start = (dt.date.today() - dt.timedelta(days=days)).isoformat()
-    out = []
-    for r in rows:
-        try:
-            d, c = r["Date"], float(r["Close"])
-        except (KeyError, ValueError):
-            continue
-        if d >= start and 5 < c < 500:
-            out.append({"d": d, "g": round(aed_g(c), 3)})
+    out = [{"d": d, "g": round(aed_g(c), 3)} for d, c in rows if d >= start and 5 < c < 500]
     if len(out) < 100:
-        raise ValueError("Stooq history too short: %d rows" % len(out))
+        raise ValueError("history too short: %d rows" % len(out))
     return out
+
+
+def get_lbma():
+    """LBMA Silver Price (USD per ounce, daily benchmark)."""
+    rows = []
+    for r in fetch("https://prices.lbma.org.uk/json/silver.json"):
+        v = r.get("v") or []
+        if v and v[0]:
+            rows.append((r["d"], float(v[0])))
+    return _window(rows)
+
+
+def get_yahoo():
+    """Fallback: COMEX silver futures daily close (SI=F)."""
+    j = fetch("https://query1.finance.yahoo.com/v8/finance/chart/SI=F?range=2y&interval=1d")["chart"]["result"][0]
+    closes = j["indicators"]["quote"][0]["close"]
+    rows = [(dt.datetime.utcfromtimestamp(t).strftime("%Y-%m-%d"), c) for t, c in zip(j["timestamp"], closes) if c]
+    return _window(rows)
 
 
 def main():
@@ -104,13 +109,17 @@ def main():
     data["prev"] = {"date": prev[-1], "aedG": archive["days"][prev[-1]]["last"]} if prev else None
 
     # 2) History
-    try:
-        data["history"] = get_stooq()
-        data["historySource"] = "stooq"
-    except Exception as e:
-        warnings.append("history: %s" % e)
+    hist = None
+    for name, fn in (("lbma", get_lbma), ("yahoo", get_yahoo)):
+        try:
+            hist = fn()
+            data["history"], data["historySource"] = hist, name
+            break
+        except Exception as e:
+            warnings.append("history %s: %s" % (name, e))
+    if hist is None:
         own = [{"d": k, "g": archive["days"][k]["last"]} for k in sorted(archive["days"])]
-        if len(own) > len(data.get("history") or []) or data.get("historySource") != "stooq":
+        if len(own) > len(data.get("history") or []) or data.get("historySource") not in ("lbma", "yahoo"):
             data["history"] = own
             data["historySource"] = "archive"
 
@@ -118,7 +127,7 @@ def main():
     data["updatedAt"] = now.strftime("%Y-%m-%dT%H:%M:%SZ")
     data["sources"] = {
         "spot": "api.gold-api.com (XAG)",
-        "history": "Stooq XAGUSD daily close, AED at the 3.6725 peg",
+        "history": "LBMA Silver Price (USD/oz), AED at the 3.6725 peg; fallback COMEX SI=F close",
     }
 
     with open(DATA, "w") as f:
