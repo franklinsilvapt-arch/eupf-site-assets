@@ -2,8 +2,8 @@
 
 Sources
 - Spot price (USD per troy ounce): https://api.gold-api.com/price/XAG
-- Daily history: LBMA Silver Price (https://prices.lbma.org.uk/json/silver.json), USD per
-  ounce, converted to AED at the 3.6725 peg. Fallback: COMEX SI=F daily close (Yahoo). If both fail, the page keeps its own archive of
+- Daily history: COMEX silver futures (SI=F) daily close from Yahoo Finance, converted to AED
+  at the 3.6725 peg. (LBMA's JSON and Stooq refuse requests from GitHub runners.) If it fails, the page keeps its own archive of
   one spot reading per UAE day (silver-archive.json), so the chart never goes empty.
 
 Rules: never overwrite good data with nothing. If a source fails, the last good values stay
@@ -110,7 +110,7 @@ def main():
 
     # 2) History
     hist = None
-    for name, fn in (("lbma", get_lbma), ("yahoo", get_yahoo)):
+    for name, fn in (("yahoo", get_yahoo),):
         try:
             hist = fn()
             data["history"], data["historySource"] = hist, name
@@ -127,7 +127,7 @@ def main():
     data["updatedAt"] = now.strftime("%Y-%m-%dT%H:%M:%SZ")
     data["sources"] = {
         "spot": "api.gold-api.com (XAG)",
-        "history": "LBMA Silver Price (USD/oz), AED at the 3.6725 peg; fallback COMEX SI=F close",
+        "history": "COMEX silver futures (SI=F) daily close via Yahoo Finance, AED at the 3.6725 peg",
     }
 
     with open(DATA, "w") as f:
