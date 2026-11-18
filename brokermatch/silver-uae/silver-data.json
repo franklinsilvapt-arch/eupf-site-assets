@@ -1,8 +1,8 @@
 {
  "spot": {
-  "usdOz": 47.34,
-  "aedG": 5.59,
-  "at": "2026-11-17T22:56:58Z",
+  "usdOz": 45.54,
+  "aedG": 5.377,
+  "at": "2026-11-18T11:52:16Z",
   "date": "2026-11-18",
   "stale": false
  },
@@ -11,10 +11,6 @@
   "aedG": 5.6
  },
  "history": [
-  {
-   "d": "2025-10-13",
-   "g": 5.919
-  },
   {
    "d": "2025-10-14",
    "g": 5.941
@@ -1117,12 +1113,16 @@
   },
   {
    "d": "2026-11-17",
-   "g": 5.584
+   "g": 5.583
+  },
+  {
+   "d": "2026-11-18",
+   "g": 5.377
   }
  ],
  "historySource": "yahoo",
  "peg": 3.6725,
- "updatedAt": "2026-11-17T22:56:58Z",
+ "updatedAt": "2026-11-18T11:52:16Z",
  "sources": {
   "spot": "api.gold-api.com (XAG)",
   "history": "COMEX silver futures (SI=F) daily close via Yahoo Finance, AED at the 3.6725 peg"
