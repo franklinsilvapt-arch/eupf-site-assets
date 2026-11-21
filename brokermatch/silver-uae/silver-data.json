@@ -2,7 +2,7 @@
  "spot": {
   "usdOz": 41.08,
   "aedG": 4.851,
-  "at": "2026-11-21T11:16:54Z",
+  "at": "2026-11-21T18:02:01Z",
   "date": "2026-11-21",
   "stale": false
  },
@@ -1118,7 +1118,7 @@
  ],
  "historySource": "yahoo",
  "peg": 3.6725,
- "updatedAt": "2026-11-21T11:16:54Z",
+ "updatedAt": "2026-11-21T18:02:01Z",
  "sources": {
   "spot": "api.gold-api.com (XAG)",
   "history": "COMEX silver futures (SI=F) daily close via Yahoo Finance, AED at the 3.6725 peg"
